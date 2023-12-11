@@ -138,13 +138,6 @@ button:hover {
 
 
 </style>
-
-
-
-
-
-
-
  <body>
   <!--!header / основное меню-->
   <div class="header">
@@ -259,14 +252,11 @@ button:hover {
           height="60px">
           <input type="text" id="myFilter2" class="filter-control" onkeyup="functionFindByAuthor()" placeholder="Поиск по имени автора...">
         </div>
-
         <input type="text" id="genreFilter" placeholder="Фильтр по жанру">
         <input type="text" id="pagesFilter" placeholder="Фильтр по количеству страниц">
         <input type="text" id="izdFilter" placeholder="Фильтр по издательству">
         <button onclick="filterBooks(document.getElementById('genreFilter').value, document.getElementById('pagesFilter').value, document.getElementById('izdFilter').value)">Фильтровать</button>
         <button onclick="resetFilter()">Сбросить фильтр</button>
-
-         
       </div>
       <div class="row" id="myItems">
         <div class="book-column-1">
@@ -299,7 +289,6 @@ button:hover {
               </div>
               <div class="book-item-b">
                 <p class="bookObject-annotation">
-                  
                   <button id="expandDescription1">Развернуть описание</button>
                   <button id="collapseDescription1" style="display: none;">Свернуть описание</button>
                   <div id="description1" style="display: none;">"Бесы" (1871-1872 гг.) — наверное, самый пророческий роман Достоевского. Изначально задуманный как острополитическая вещь, основанная на впечатлениях писателя от "нечаевского процесса": группу революционеров судили за убийство студента, решившего выйти из их кружка, — роман далеко перерос просто произведение на "злобу дня".
@@ -345,7 +334,6 @@ button:hover {
               </div>
               <div class="book-item-b">
                 <p class="bookObject-annotation">
-                  
                   <button id="expandDescription2">Развернуть описание</button>
                   <button id="collapseDescription2" style="display: none;">Свернуть описание</button>
                   <div id="description2" style="display: none;">«Мёртвые души» — произведение Николая Васильевича Гоголя, жанр которого сам автор обозначил как поэма.
@@ -389,7 +377,6 @@ button:hover {
               </div>
               <div class="book-item-b">
                 <p class="bookObject-annotation">
-                  
                   <button id="expandDescription3">Развернуть описание</button>
                   <button id="collapseDescription3" style="display: none;">Свернуть описание</button>
                   <div id="description3" style="display: none;">
@@ -434,7 +421,6 @@ button:hover {
               </div>
               <div class="book-item-b">
                 <p class="bookObject-annotation">
-                  
                   <button id="expandDescription4">Развернуть описание</button>
                   <button id="collapseDescription4" style="display: none;">Свернуть описание</button>
                   <div id="description4" style="display: none;">Комедия в пяти действиях русского писателя Николая Васильевича Гоголя. Годом написания считается 1835 год, однако окончательные правки в свое произведение Н. В. Гоголь внёс в 1842 году. Темой этой комедии социально-сатирической направленности являются пороки общества, чиновничество и его бездеятельность, лицемерие, духовная бедность, общечеловеческая глупость.</div>
@@ -477,7 +463,6 @@ button:hover {
               </div>
               <div class="book-item-b">
                 <p class="bookObject-annotation">
-                  
                   <button id="expandDescription5">Развернуть описание</button>
                   <button id="collapseDescription5" style="display: none;">Свернуть описание</button>
                   <div id="description5" style="display: none;">Наиболее известный разбойничий роман на русском языке, необработанное для печати произведение А. С. Пушкина. Повествует о любви Владимира Дубровского к Марии Троекуровой - потомков двух враждующих помещичьих семейств.</div>
@@ -659,9 +644,6 @@ function filterBooks(genre, pages, izd) {
      }
  }
 }
-//---------------------------------------
-
-
   </script>
  </body>
 </html>
