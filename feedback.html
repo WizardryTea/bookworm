@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <!-- Кодировка страницы-->
+    <meta charset="UTF-8">
+    <!-- Для совместимости с IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Для красивого отображения на мобильных устройствах-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Самая крупная электронная библиотека с большим количеством бесплатных книг для чтения, читайте онлайн книги без регистрации с компьютера или телефона." />
+    <!-- Заголовок страницы -->
+    <title>BookWorm - Электронная библиотека</title>
+    <!-- icon-фавиконка .ico (после title в head)-->
+    <link rel="icon" type="image/png"href="img\favicon.png">
+    <!--Подключаем наш файл стилей CSS-->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+  </head>
+<style>
+form {
+ max-width: 600px;
+ width: 100%;
+ margin: 0 auto;
+ box-sizing: border-box;
+ padding: 20px;
+ font-family: Arial, sans-serif;
+}
+
+form p {
+ margin: 0 0 20px;
+}
+
+form label {
+ display: block;
+ margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="tel"],
+form input[type="email"],
+form input[type="password"],
+form input[type="datetime-local"],
+form select,
+form input[type="file"] {
+ width: 100%;
+ padding: 10px;
+ border: 1px solid #351E10;
+ border-radius: 4px;
+ box-sizing: border-box;
+}
+
+fieldset label, fieldset input[type="checkbox"] {
+ display: inline-block;
+}
+
+form input[type="checkbox"],
+form input[type="radio"] {
+ margin: 0 5px 0 0;
+ float: left;
+}
+
+form fieldset {
+ margin: 0 0 20px;
+ padding: 0;
+ border: none;
+}
+
+form fieldset legend {
+ padding: 0;
+ font-weight: bold;
+}
+
+form button[type="submit"] {
+ padding: 10px 20px;
+ background-color: #351E10;
+ border-color: #ccab84;
+ color: white;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+}
+
+form button[type="submit"]:hover{
+  background-color:#ccab84;
+}
+@media screen and (max-width: 600px) {
+ form p {
+   margin-bottom: 15px;
+ }
+}
+.topic-text{
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 4px;
+  text-decoration-color: #351E10;
+}
+.emoji {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+.img-emoji {
+ width: 50%;
+ height: auto;
+}
+.center-text {
+ text-align: center;
+}
+
+</style>
+
+
+
+
+
+
+
+
+<body>
+  <!--!header / основное меню-->
+  <div class="header">
+    <nav>
+      <!--Верхнее меню-->
+      <div class="menu">
+        <div class="logo"><a href="index.html">BookWorm</a></div>
+        <input type="radio" name="slider" id="menu-btn">
+        <input type="radio" name="slider" id="close-btn">
+        <ul class="nav-links">
+          <!--Бургер закрыть меню-->
+          <label for="close-btn" class="btn close-btn">
+            <i class="fas fa-times">
+            </i>
+            <div class="icon-book">
+              <img src="icons/icon-close.png"
+                width="55px"
+                height="55px">
+            </div>
+          </label>
+          <li><a href="index.html">Библиотека</a></li>
+          <li>
+            <a href="index.html" class="desktop-item">Жанры</a>
+            <input type="checkbox" id="showDrop">
+            <label for="showDrop" class="mobile-item">Жанры</label>
+            <ul class="drop-menu">
+              <li><a href="index.html">Фэнтези</a></li>
+              <li><a href="index.html">Приключения</a></li>
+              <li><a href="index.html">Мистика</a></li>
+              <li><a href="index.html">Юмор</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="index.html" class="desktop-item">Навигация</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">Навигация</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <img src="icons/worm.png" alt="Червяк на листе">
+                </div>
+                <div class="row">
+                  <header>Жанры</header>
+                  <ul class="mega-links">
+                    <li><a href="index.html">Фантастика</a></li>
+                    <li><a href="index.html">Приключения</a></li>
+                    <li><a href="index.html">Классика</a></li>
+                    <li><a href="index.html">Научная</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>Рейтинг</header>
+                  <ul class="mega-links">
+                    <li><a href="best-day.html">Лучшее за день</a></li>
+                    <li><a href="best-week.html">Лучшее за неделю</a></li>
+                    <li><a href="best-m.html">Лучшее за месяц</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>Навигация</header>
+                  <ul class="mega-links">
+                    <li><a href="contacts.html">Наш адрес</a></li>
+                    <li><a href="quotes.html">Цитаты</a></li>
+                    <li><a href="donat.html">Поддержка</a></li>
+                    <li><a href="feedback.html">Обратная связь</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+        <!--Бургер открыть меню-->
+        <label for="menu-btn" class="btn menu-btn">
+          <i class="fas fa-bars">
+            <div class="icon-book">
+              <img src="icons/icon-book.png"
+                width="55px"
+                height="55px">
+            </div>
+          </i></label>
+      </div>
+    </nav>
+  </div>
+  <!--!sidebar / боковое меню-->
+  <div class="sidebar">
+    <p><a href="contacts.html">Контакты</a></p>
+    <p><a href="donat.html">Поддержите нас!</a></p>
+    <p><a href="quotes.html">Цитаты из книг</a></p>
+    <p><a href="feedback.html">Обратная связь</a></p>
+
+    <p>BookWorm рекомендует:</p>
+    <img src="covers/mertviedushi.jpg"
+    width="115px"
+    height="190px">
+  </div>
+  <!--!content / контент-->
+  <div class="content">
+
+
+
+
+
+
+
+    <div class="form-content">
+      <div class="topic-text"><h2>Отправьте нам сообщение о Вашем опыте на сайте</h2></div>
+      <form name=forma1 action="" method="get">
+        <p>
+          <label for="name">Введите имя*:</label>
+          <input type="text"
+          name="name"
+          id="name"
+          autocomplete="on"
+          required
+          placeholder="Введите Ваше имя"
+          >
+        </p>
+        <p>
+          <label for="phone">Введите мобильный телефон:</label>
+          <input type="tel" name="phone" id="phone" autocomplete="on" placeholder="+7 (000) - 000 - 00 - 00">
+        </p>
+        <p>
+          <label for="mail">Введите email*:</label>
+          <input type="email" name="mail" id="mail" autocomplete="on" required placeholder="my_mail@mail.ru">
+        </p>
+        <p>
+          <label for="pass">Введите пароль от Вашей учетной записи*:</label>
+          <input
+            type="password"
+            name="pass"
+            id="pass"
+            required
+            minlength="4"
+            maxlength="30"
+            autocomplete="on"
+            pattern="1234"
+            placeholder="(от 4 до 30 символов)"
+          >
+          <!--pattern Регулярная проверка значения input элемента-->
+        </p>
+        <fieldset>
+          <legend>Выберите любимые жанры книг: </legend>
+          <div cl1>
+            <label for="cb">Ужасы</label>
+            <input type="checkbox" name="cb" id="cb">
+          </div>
+          <div cl2>
+            <label for="cb">Приключения</label>
+            <input type="checkbox" name="cb" id="cb">
+          </div>
+          <div cl3>
+            <label for="cb">Фантастика</label>
+            <input type="checkbox" name="cb" id="cb">
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Выберите пол:</legend>
+          <div clm>
+            <label for="rad">Мужской</label>
+            <input type="radio" name="rad" id="rad">
+          </div>
+          <div clw>
+            <label for="rad">Женский</label>
+            <input type="radio" name="rad" id="rad">
+          </div>
+          <div cln>
+            <label for="rad">Неопознанный:</label>
+            <input type="radio" name="rad" id="rad">
+          </div>
+        </fieldset>
+        <p>
+          <label for="det">Введите год рождения:</label>
+          <input type="datetime-local" name="det" id="det">
+        </p>
+        <p>
+          <label for="q1">Выберите город проживания:</label>
+          <select name="city" id="city-select" size="1">
+            <option value="">-- Выберите город --</option>
+            <option value="Mosk">Москва</option>
+            <option value="Kaz">Казань</option>
+            <option value="Che1">Челябинск</option>
+            <option value="Che2">Чехов</option>
+            <option value="Ca">Саратов</option>
+            <option value="Dr">Другое</option>
+          </select>
+        </p>
+        <p>
+          <label for="f">Прикрепите фотографию (если возникла проблема):</label>
+          <input type="file" name="f" id="f">
+        </p>
+        <button type="submit">Отправить обращение</button>
+      </form>
+      <div class="center-text">Благодарим за Ваш отзыв о сайте!</div>
+      <div class="emoji">
+        <img src="icons/emoji-like.png" class="img-emoji">
+        <img src="icons/emoji-dislike.png" class="img-emoji">
+      </div>
+      
+  </div>
+  </div>
+  <!--footer / подвал сайта-->
+  <div class="footer">
+    <p>НАШИ СОЦИАЛЬНЫЕ СЕТИ</p>
+    <ul class="social-media-list">
+      <li><a href="https://www.instagram.com"><img src="icons/insta.png" alt="Instagram" title="Instagram"></a></li>
+      <li><a href="https://web.whatsapp.com"><img src="icons/wt.png" alt="WhatsApp" title="WhatsAp"></a></li>
+      <li><a href="https://web.telegram.org"><img src="icons/tg.png" alt="Telegram" title="Telegram"></a></li>
+      <li><a href="https://www.facebook.com"><img src="icons/facebook.png" alt="facebook" title="facebook"></a></li>
+      <li><a href="https://vk.com"><img src="icons/vk.png" alt="VK" title="VK"></a></li>
+      <li><a href="https://github.com"><img src="icons/github.png" alt="GitHub" title="GitHub"></a></li>
+      <li><a href="https://www.youtube.com/"><img src="icons/youtube.png" alt="YouTube" title="Youtube"></a></li> 
+    </ul>
+    <div class="footer-line">&copy;BookWorm 2023 - все права защищены.
+      <p>Копирование и распространение материалов с сайта разрешено только с указанием активной ссылки на источник. Мнение авторов и посетителей сайта может не совпадать с мнением редакции.</p>
+    </div>
+    <div class="footer-love">Сделано с любовью ❤️</div>
+  </div>
+  <!-- partial / scripts / подключения на все скрипты тут -->
+  <script>
+</script>
+ </body>
+</html>
+
+<!--
+  Кнопка наверх, меню не закреплено, будет только сверху
+-->

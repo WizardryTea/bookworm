@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <!-- Кодировка страницы-->
+    <meta charset="UTF-8">
+    <!-- Для совместимости с IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Для красивого отображения на мобильных устройствах-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Самая крупная электронная библиотека с большим количеством бесплатных книг для чтения, читайте онлайн книги без регистрации с компьютера или телефона." />
+    <!-- Заголовок страницы -->
+    <title>BookWorm - Электронная библиотека</title>
+    <!-- icon-фавиконка .ico (после title в head)-->
+    <link rel="icon" type="image/png"href="img\favicon.png">
+    <!--Подключаем наш файл стилей CSS-->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+  </head>
+<style>
+.content h2, .p-p {
+ text-align: center;
+}
+
+.content-box {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column
+}
+
+</style>
+
+
+
+
+
+
+
+
+<body>
+  <!--!header / основное меню-->
+  <div class="header">
+    <nav>
+      <!--Верхнее меню-->
+      <div class="menu">
+        <div class="logo"><a href="index.html">BookWorm</a></div>
+        <input type="radio" name="slider" id="menu-btn">
+        <input type="radio" name="slider" id="close-btn">
+        <ul class="nav-links">
+          <!--Бургер закрыть меню-->
+          <label for="close-btn" class="btn close-btn">
+            <i class="fas fa-times">
+            </i>
+            <div class="icon-book">
+              <img src="icons/icon-close.png"
+                width="55px"
+                height="55px">
+            </div>
+          </label>
+          <li><a href="index.html">Библиотека</a></li>
+          <li>
+            <a href="index.html" class="desktop-item">Жанры</a>
+            <input type="checkbox" id="showDrop">
+            <label for="showDrop" class="mobile-item">Жанры</label>
+            <ul class="drop-menu">
+              <li><a href="index.html">Фэнтези</a></li>
+              <li><a href="index.html">Приключения</a></li>
+              <li><a href="index.html">Мистика</a></li>
+              <li><a href="index.html">Юмор</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="index.html" class="desktop-item">Навигация</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">Навигация</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <img src="icons/worm.png" alt="Червяк на листе">
+                </div>
+                <div class="row">
+                  <header>Жанры</header>
+                  <ul class="mega-links">
+                    <li><a href="index.html">Фантастика</a></li>
+                    <li><a href="index.html">Приключения</a></li>
+                    <li><a href="index.html">Классика</a></li>
+                    <li><a href="index.html">Научная</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>Рейтинг</header>
+                  <ul class="mega-links">
+                    <li><a href="best-day.html#day">Лучшее за день</a></li>
+                    <li><a href="best-day.html">Лучшее за неделю</a></li>
+                    <li><a href="best-day.html#m">Лучшее за месяц</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>Навигация</header>
+                  <ul class="mega-links">
+                    <li><a href="contacts.html">Наш адрес</a></li>
+                    <li><a href="quotes.html">Цитаты</a></li>
+                    <li><a href="donat.html">Поддержка</a></li>
+                    <li><a href="feedback.html">Обратная связь</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+        <!--Бургер открыть меню-->
+        <label for="menu-btn" class="btn menu-btn">
+          <i class="fas fa-bars">
+            <div class="icon-book">
+              <img src="icons/icon-book.png"
+                width="55px"
+                height="55px">
+            </div>
+          </i></label>
+      </div>
+    </nav>
+  </div>
+  <!--!sidebar / боковое меню-->
+  <div class="sidebar">
+    <p><a href="contacts.html">Контакты</a></p>
+    <p><a href="donat.html">Поддержите нас!</a></p>
+    <p><a href="quotes.html">Цитаты из книг</a></p>
+    <p><a href="feedback.html">Обратная связь</a></p>
+
+    <p>BookWorm рекомендует:</p>
+    <img src="covers/mertviedushi.jpg"
+    width="115px"
+    height="190px">
+  </div>
+  <!--!content / контент-->
+  <div class="content">
+    <div class="content-box">
+        <h2 id="#day">Лучшее за день!</h2>
+        <img src="covers/beci.jpg" class="img-best">
+        <h2 id="#week">Лучшее за неделю!</h2>
+        <img src="covers/palata6.jpg" class="img-best">
+        <h2 id="#m">Лучшее за месяц!</h2>
+        <img src="covers/beci.jpg" class="img-best">
+        <p class="p-p">Спасибо что Вы с Нами!</p>
+    </div>
+  </div>
+  <!--footer / подвал сайта-->
+  <div class="footer">
+    <p>НАШИ СОЦИАЛЬНЫЕ СЕТИ</p>
+    <ul class="social-media-list">
+      <li><a href="https://www.instagram.com"><img src="icons/insta.png" alt="Instagram" title="Instagram"></a></li>
+      <li><a href="https://web.whatsapp.com"><img src="icons/wt.png" alt="WhatsApp" title="WhatsAp"></a></li>
+      <li><a href="https://web.telegram.org"><img src="icons/tg.png" alt="Telegram" title="Telegram"></a></li>
+      <li><a href="https://www.facebook.com"><img src="icons/facebook.png" alt="facebook" title="facebook"></a></li>
+      <li><a href="https://vk.com"><img src="icons/vk.png" alt="VK" title="VK"></a></li>
+      <li><a href="https://github.com"><img src="icons/github.png" alt="GitHub" title="GitHub"></a></li>
+      <li><a href="https://www.youtube.com/"><img src="icons/youtube.png" alt="YouTube" title="Youtube"></a></li> 
+    </ul>
+    <div class="footer-line">&copy;BookWorm 2023 - все права защищены.
+      <p>Копирование и распространение материалов с сайта разрешено только с указанием активной ссылки на источник. Мнение авторов и посетителей сайта может не совпадать с мнением редакции.</p>
+    </div>
+    <div class="footer-love">Сделано с любовью ❤️</div>
+  </div>
+  <!-- partial / scripts / подключения на все скрипты тут -->
+  <script>
+  </script>
+ </body>
+</html>
+
+<!--
+  Кнопка наверх, меню не закреплено, будет только сверху
+-->

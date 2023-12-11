@@ -1,0 +1,417 @@
+/*-----------СПРАВКА-------------
+
+width — ширина элемента;
+height — высота элемента;
+padding — внутренние отступы от контента до краёв элемента;
+border — рамка, идущая по краю элемента;
+margin — внешние отступы вокруг элемента
+
+
+CDB891 - основной цвет
+#e2d2b2; - более светлый
+#ccab84; хххх более темный, второе меню, приятный коричневый
+
+#CDB891 - Основной цвет
+#351E10 - HICKORY для меню
+#2B1700 - CHOCOLATE - нажатая кнопка меню
+f2f2f2 - цвет шрифта меню
+#351E10; - красивый темно-серый
+*/
+
+/*---------------Шрифт-------------------------------*/
+/*Для названия BookWorm*/
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+/*Для колонок с авторами*/
+@import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=Rubik+Dirt&display=swap');
+/*------------Основные стили-------------------------*/
+html {
+	font-size: 16px; /*16 по умолчанию*/
+  font-family: 'Shantell Sans', cursive;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed; /*фон неподвижен при скроллинге*/
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+body {
+  font-family: 'Shantell Sans', cursive;
+  margin: 0; /* Отступы на странице */
+  background-color: #CDB891;
+}
+h1 {
+  font-size: 36px; /* Размер шрифта заголовка шапки */
+  margin: 0; /* Убираем отступы */
+  color: #CDB891; /* Цвет текста заголовка шапки */
+}
+h2 {
+  margin-top: 0; /* Убираем отступ сверху */
+}
+.h2{
+  display: contents;
+}
+.sidebar {
+  float: right; /* Обтекание справа */
+  border: 1px solid #351E10; /* Рамка левого меню */
+  width: 20%; /* Ширина левой колонки */
+  padding: 5px; /* Поля внутри блока */
+  margin: 10px 10px 20px 5px; /* Значения отступа от блока */
+  box-shadow: 0 0 10px;
+  box-shadow: #351E10;
+  background: #e2d2b2;
+}
+.content {
+  /*min-height: 100vh; для правильного расположения футера внизу страницы*/
+  margin: 10px 25% 20px 5px; /* Значения отступа от правого блока */
+  padding: 5px; /* Поля внутри блока */
+  border: 1px solid #351E10; /* Рамка контента */
+  box-shadow: 0 0 10px;
+  box-shadow: #351E10;
+  background: #e2d2b2;
+}
+.main{
+  background-color: #CDB891;
+}
+
+/*-------------------МЕНЮ БУРГЕР---------------------*/
+.icon-book{
+  display: flex;
+}
+.menu{
+  padding: 0;
+  margin: 0;
+}
+nav{
+  z-index: 99;
+  width: 100%;
+  
+  background: #351E10;
+}
+nav .menu{
+  position: relative;
+  max-width: 1300px;
+  padding: 0px 30px;
+  height: 70px;
+  line-height: 70px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu .logo a{
+  font-family: "Mr Dafoe", cursive;
+  -webkit-text-stroke: 0.15px white;
+  color: #CDB891;
+  font-size: 60px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.menu .nav-links{
+  display: inline-flex;
+}
+.nav-links li{
+  list-style: none;
+}
+.nav-links li a{
+  overflow: hidden;
+  white-space: nowrap;
+  color: #f2f2f2;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 9px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+.nav-links li a:hover{
+  background: #2B1700;
+  border: dotted;
+  border-color:  antiquewhite;
+}
+.nav-links .mobile-item{
+  display: none;
+}
+.nav-links .drop-menu{
+  position: absolute;
+  background: #351E10;
+  width: 180px;
+  line-height: 45px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+.nav-links li:hover .drop-menu,
+.nav-links li:hover .mega-box{
+  transition: all 0.3s ease;
+  top: 70px;
+  opacity: 1;
+  visibility: visible;
+}
+.drop-menu li a{
+  width: 100%;
+  display: block;
+  padding: 0 0 0 15px;
+  font-weight: 400;
+  border-radius: 0px;
+  border-style: dotted;
+  border-color: #d9d9d9;
+  max-width: fit-content;
+  margin: 15px;
+}
+.mega-box{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding: 0 30px;
+  top: 85px;
+  opacity: 0;
+  visibility: hidden;
+}
+.mega-box .content{
+  background: #351E10;
+  padding: 25px 20px;
+  margin: 0%;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+}
+.mega-box .content .row{
+  width: calc(25% - 30px);
+  line-height: 45px;
+}
+.content .row img{
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  max-width: 85%;
+}
+.content .row header{
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: 500;
+}
+.content .row .mega-links{
+  margin-left: -40px;
+  border-left: 1px solid rgba(255,255,255,0.09);
+}
+.row .mega-links li{
+  padding: 0 20px;
+}
+.row .mega-links li a{
+  padding: 0px;
+  padding: 0 20px;
+  color: #d9d9d9;
+  font-size: 17px;
+  display: block;
+}
+.row .mega-links li a:hover{
+  color: #f2f2f2;
+}
+.menu .btn{
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+}
+.menu .btn.close-btn{
+  position: absolute;
+  right: 30px;
+  top: 10px;
+}
+
+@media screen and (max-width: 970px) {
+  .menu .btn{
+    display: block;
+  }
+  .menu .nav-links{
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    top: 0;
+    left: -100%;
+    background: #351E10;
+    margin: 0%;    
+    display: block;
+    padding: 50px 10px;
+    line-height: 50px;
+    overflow-y: auto;
+    box-shadow: 0px 15px 15px rgba(0,0,0,0.18);
+    transition: all 0.3s ease;
+  }
+  /*------------------scroll bar--------------------*/
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: rgb(186, 182, 177);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #524f4d;
+  }
+  #menu-btn:checked ~ .nav-links{
+    left: 0%;
+  }
+  #menu-btn:checked ~ .btn.menu-btn{
+    display: none;
+  }
+  #close-btn:checked ~ .btn.menu-btn{
+    display: block;
+  }
+  .nav-links li{
+    margin: 15px 10px;
+  }
+  .nav-links li a{
+    padding: 0 20px;
+    display: block;
+    font-size: 20px;
+  }
+  .nav-links .drop-menu{
+    position: static;
+    opacity: 1;
+    top: 65px;
+    visibility: visible;
+    padding-left: 20px;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    box-shadow: none;
+    transition: all 0.3s ease;
+  }
+  #showDrop:checked ~ .drop-menu,
+  #showMega:checked ~ .mega-box{
+    max-height: 100%;
+  }
+  .nav-links .desktop-item{
+    display: none;
+  }
+  .nav-links .mobile-item{
+    display: block;
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 500;
+    padding-left: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .nav-links .mobile-item:hover{
+    background: #2B1700;
+    border: dotted;
+    border-color: antiquewhite;
+  }
+  .drop-menu li{
+    margin: 0;
+  }
+  .drop-menu li a{
+    border-radius: 5px;
+    font-size: 18px;
+  }
+  .mega-box{
+    position: static;
+    top: 65px;
+    opacity: 1;
+    visibility: visible;
+    padding: 0 20px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .mega-box .content{
+    box-shadow: none;
+    flex-direction: column;
+    padding: 20px 20px 0 20px;
+  }
+  .mega-box .content .row{
+    width: 100%;
+    margin-bottom: 15px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .mega-box .content .row:nth-child(1),
+  .mega-box .content .row:nth-child(2){
+    border-top: 0px;
+  }
+  .content .row .mega-links{
+    border-left: 0px;
+    padding-left: 15px;
+  }
+  .row .mega-links li{
+    margin: 0;
+  }
+  .content .row header{
+    font-size: 19px;
+  }
+}
+nav input{
+  display: none;
+}
+.body-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  padding: 0 30px;
+}
+.body-text div{
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.sidebar .img{
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+}
+/*---------------------footer------------------------------*/
+
+.footer {
+  background: #351E10; /* Цвет фона подвал (футера) */
+  padding: 5px; /* Поля внутри блока */
+  color: #CDB891; /* Цвет текста футера */
+  /*clear: left;  Отменяем действие float */
+  text-align: center;
+  }
+
+.footer-line{
+  display: block;
+  text-align: center;
+}
+/*Соцсети---------------------------------------------------------*/
+
+/*Социальные ссылки*/
+.social-media-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ }
+ 
+ ul.social-media-list img {
+   padding: 5px;
+   border-radius: 5px;
+   background-color: #e2d2b2;
+   width: 36px;
+   height: 36px;
+   border: 5px solid #351E10;
+ }
+ 
+ ul.social-media-list {
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   font-size: 0px;
+ }
+ 
+ ul.social-media-list li {
+   display: inline-block;
+   margin: 2px;
+ }
+ 
+ ul.social-media-list img:hover {
+   background-color: antiquewhite;
+ }
+ 

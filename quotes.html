@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <!-- Кодировка страницы-->
+    <meta charset="UTF-8">
+    <!-- Для совместимости с IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Для красивого отображения на мобильных устройствах-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Самая крупная электронная библиотека с большим количеством бесплатных книг для чтения, читайте онлайн книги без регистрации с компьютера или телефона." />
+    <!-- Заголовок страницы -->
+    <title>BookWorm - Электронная библиотека</title>
+    <!-- icon-фавиконка .ico (после title в head)-->
+    <link rel="icon" type="image/png"href="img\favicon.png">
+    <!--Подключаем наш файл стилей CSS-->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+  </head>
+<style>
+.gallery {
+ width: 500px;
+ height: 500px;
+ overflow: hidden;
+}
+
+.main-image, .thumbnails img {
+ width: 100%;
+ height: auto;
+}
+
+.thumbnails img {
+ margin-bottom: 10px;
+}
+
+.sub-img img {
+ max-width: 200px;
+ max-height: 100px;
+}
+.sub-img img:hover{
+  max-height: 120px;
+  box-shadow: 0px 0px 10px rgba(41, 38, 59, 0.488);
+  transition: 0.3s;
+}
+
+@media (max-width: 700px) {
+ .gallery {
+   width: 100%;
+   height: auto;
+ }
+
+ .main-image, .thumbnails img {
+   width: 100%;
+   height: auto;
+ }
+
+ .sub-img img {
+   max-width: 100%;
+   max-height: auto;
+ }
+}
+/*-----------------------Цитата--------------------------*/
+blockquote {
+ background: #ffe9db33;
+ border-left: 10px solid #b79165;
+ font-style: italic;
+ margin: 1.5em 10px;
+ padding: 0.5em 10px;
+ margin-bottom: 0%;
+}
+
+/*Лево*/
+blockquote:before {
+font-family: "Mr Dafoe", cursive;
+ color: #b79165;
+ content: "\201C"; /* Непечатаемый символ слева */
+ font-size: 3em;
+ line-height: 0.1em;
+ margin-right: 0.2em;
+ vertical-align: -.4em;
+}
+/*Право*/
+blockquote:after {
+ font-family: "Mr Dafoe", cursive;
+ color: #b79165;
+ content: "\201D"; /* Непечатаемый символ справа */
+ font-size: 3em;
+ line-height: 0.1em;
+ vertical-align: -.45em;
+}
+
+blockquote > p:first-child {
+ display: inline;
+}
+
+cite {
+  margin-top: 0;
+ display: block;
+ text-align: right;
+}
+
+
+</style>
+
+
+
+
+
+
+
+
+<body>
+  <!--!header / основное меню-->
+  <div class="header">
+    <nav>
+      <!--Верхнее меню-->
+      <div class="menu">
+        <div class="logo"><a href="index.html">BookWorm</a></div>
+        <input type="radio" name="slider" id="menu-btn">
+        <input type="radio" name="slider" id="close-btn">
+        <ul class="nav-links">
+          <!--Бургер закрыть меню-->
+          <label for="close-btn" class="btn close-btn">
+            <i class="fas fa-times">
+            </i>
+            <div class="icon-book">
+              <img src="icons/icon-close.png"
+                width="55px"
+                height="55px">
+            </div>
+          </label>
+          <li><a href="index.html">Библиотека</a></li>
+          <li>
+            <a href="index.html" class="desktop-item">Жанры</a>
+            <input type="checkbox" id="showDrop">
+            <label for="showDrop" class="mobile-item">Жанры</label>
+            <ul class="drop-menu">
+              <li><a href="index.html">Фэнтези</a></li>
+              <li><a href="index.html">Приключения</a></li>
+              <li><a href="index.html">Мистика</a></li>
+              <li><a href="index.html">Юмор</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="index.html" class="desktop-item">Навигация</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">Навигация</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <img src="icons/worm.png" alt="Червяк на листе">
+                </div>
+                <div class="row">
+                  <header>Жанры</header>
+                  <ul class="mega-links">
+                    <li><a href="index.html">Фантастика</a></li>
+                    <li><a href="index.html">Приключения</a></li>
+                    <li><a href="index.html">Классика</a></li>
+                    <li><a href="index.html">Научная</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>Рейтинг</header>
+                  <ul class="mega-links">
+                    <li><a href="best-day.html">Лучшее за день</a></li>
+                    <li><a href="best-week.html">Лучшее за неделю</a></li>
+                    <li><a href="best-m.html">Лучшее за месяц</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>Навигация</header>
+                  <ul class="mega-links">
+                    <li><a href="contacts.html">Наш адрес</a></li>
+                    <li><a href="quotes.html">Цитаты</a></li>
+                    <li><a href="donat.html">Поддержка</a></li>
+                    <li><a href="feedback.html">Обратная связь</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+        <!--Бургер открыть меню-->
+        <label for="menu-btn" class="btn menu-btn">
+          <i class="fas fa-bars">
+            <div class="icon-book">
+              <img src="icons/icon-book.png"
+                width="55px"
+                height="55px">
+            </div>
+          </i></label>
+      </div>
+    </nav>
+  </div>
+  <!--!sidebar / боковое меню-->
+  <div class="sidebar">
+    <p><a href="contacts.html">Контакты</a></p>
+    <p><a href="donat.html">Поддержите нас!</a></p>
+    <p><a href="quotes.html">Цитаты из книг</a></p>
+    <p><a href="feedback.html">Обратная связь</a></p>
+
+    <p>BookWorm рекомендует:</p>
+    <img src="covers/mertviedushi.jpg"
+    width="115px"
+    height="190px">
+  </div>
+  <!--!content / контент-->
+  <div class="content">
+
+    <div class="gallery">
+      <img class="main-image" src="img/img2.jpg" alt="Плакат 2, основной">
+      <div class="sub-img">
+        <img src="img/img3.jpg" alt="Плакат 1">
+        <img src="img/img2.jpg" alt="Плакат 2">
+        <img src="img/img5.jpg" alt="Плакат 3">
+      </div>
+     </div>
+     <p>&nbsp;&nbsp;&nbsp;&nbsp;Предлагаем нашим читателям ознакомиться с некоторыми цитатами из книг, которые возможно Вас заинтересуют</p>
+     <blockquote>
+      <p>— Что может быть глупее глупого добряка?<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;— Злой дурак.
+      </p>
+     </blockquote>
+     <cite>Фёдор Михайлович Достоевский. "Бесы"</cite>
+
+     <blockquote>
+      <p>Господи боже! Какое необъятное расстояние между знанием света и умением пользоваться этим знанием!</p>
+     </blockquote>
+     <cite>Николай Васильевич Гоголь. "Мертвые души"</cite>
+
+     <blockquote>
+      <p>Молчать — большой талант.</p>
+     </blockquote>
+     <cite>Фёдор Михайлович Достоевский. "Бесы"</cite>
+
+     <blockquote>
+      <p>После обеда господин выкушал чашку кофею и сел на диван, подложивши себе за спину подушку, которую в русских трактирах вместо эластической шерсти набивают чем-то чрезвычайно похожим на кирпич и булыжник.</p>
+     </blockquote>
+     <cite>Николай Васильевич Гоголь. "Мертвые души"</cite>
+
+     <p>&nbsp;&nbsp;&nbsp;Если Вас заинтересовало что-то, то воспользуйтесь поиском на главной странице!</p>
+  </div>
+  <!--footer / подвал сайта-->
+  <div class="footer">
+    <p>НАШИ СОЦИАЛЬНЫЕ СЕТИ</p>
+    <ul class="social-media-list">
+      <li><a href="https://www.instagram.com"><img src="icons/insta.png" alt="Instagram" title="Instagram"></a></li>
+      <li><a href="https://web.whatsapp.com"><img src="icons/wt.png" alt="WhatsApp" title="WhatsAp"></a></li>
+      <li><a href="https://web.telegram.org"><img src="icons/tg.png" alt="Telegram" title="Telegram"></a></li>
+      <li><a href="https://www.facebook.com"><img src="icons/facebook.png" alt="facebook" title="facebook"></a></li>
+      <li><a href="https://vk.com"><img src="icons/vk.png" alt="VK" title="VK"></a></li>
+      <li><a href="https://github.com"><img src="icons/github.png" alt="GitHub" title="GitHub"></a></li>
+      <li><a href="https://www.youtube.com/"><img src="icons/youtube.png" alt="YouTube" title="Youtube"></a></li> 
+    </ul>
+    <div class="footer-line">&copy;BookWorm 2023 - все права защищены.
+      <p>Копирование и распространение материалов с сайта разрешено только с указанием активной ссылки на источник. Мнение авторов и посетителей сайта может не совпадать с мнением редакции.</p>
+    </div>
+    <div class="footer-love">Сделано с любовью ❤️</div>
+  </div>
+  <!-- partial / scripts / подключения на все скрипты тут -->
+  <script>
+    var thumbnails = document.querySelectorAll('.sub-img img');
+    var mainImage = document.querySelector('.main-image');
+
+    thumbnails.forEach(function(thumbnail) {
+    thumbnail.addEventListener('click', function() {
+      mainImage.src = this.src;
+    });
+    });
+  </script>
+ </body>
+</html>
+
+<!--
+  Кнопка наверх, меню не закреплено, будет только сверху
+-->

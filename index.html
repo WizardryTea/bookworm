@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <!-- Кодировка страницы-->
+    <meta charset="UTF-8">
+    <!-- Для совместимости с IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Для красивого отображения на мобильных устройствах-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Самая крупная электронная библиотека с большим количеством бесплатных книг для чтения, читайте онлайн книги без регистрации с компьютера или телефона." />
+    <!-- Заголовок страницы -->
+    <title>BookWorm - Электронная библиотека</title>
+    <!-- icon-фавиконка .ico (после title в head)-->
+    <link rel="icon" type="image/png"href="img\favicon.png">
+    <!--Подключаем наш файл стилей CSS-->
+    <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <script src="js/main.js"></script>
+  </head>
+
+<style>
+
+/*--------------------bookObjects--------------------------------*/
+.container {
+  padding: 10px;
+}
+
+ul li {
+  list-style: none;
+  
+}
+/*-----------booklist----------------------------------------------*/
+.book-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-style: groove;
+  padding: 5px;
+  margin: 5px;
+  border-color: #351E10;
+  min-width: 200px;
+}
+.book-body {
+  display: flex;
+  margin: 0;
+}
+
+.book-top2 {
+  display: flex;
+  flex-direction: start;
+}
+
+.book-cover {
+  margin-right: 20px;
+}
+
+.book-item-b {
+  margin-top: 5px;
+}
+.book-download-fb2{
+  width: 8%;
+  min-width: 40px;
+  max-width: 60px;
+}
+
+.filter-control {
+ background-color: rgb(240, 240, 240);
+ padding: 15px 32px;
+ text-align: center;
+ display: inline-block;
+ font-size: 16px;
+ border-radius: 4px;
+ transition-duration: 0.5s;
+ box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.filter-control:hover {
+ background-color: #d9d9d9;
+}
+
+.book-column-0{
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  margin: 15px;
+  
+}
+.bool-item-r{
+  display: flex;
+  height: fit-content;
+}
+.b-author, .b-genre, .b-pages, .b-izd{
+  display: flex;
+  align-items: baseline;
+  font-size: 20px;
+}
+.img-txt{
+  display: flex;
+  align-items: baseline;
+}
+.description {
+  display: none;
+}
+
+.drop-menu li a{
+ max-width: -webkit-fill-available;
+}
+
+/*---------------------------------------------------------*/
+input[type=text] {
+ width: 100%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ box-sizing: border-box;
+ border: 2px solid #ccc;
+ border-radius: 4px;
+}
+button {
+ background-color: #351E10;
+ border: none;
+ color: white;
+ padding: 15px 32px;
+ text-align: center;
+ text-decoration: none;
+ display: inline-block;
+ font-size: 16px;
+ margin: 4px 2px;
+ cursor: pointer;
+}
+input[type=text]:focus {
+ background-color: rgba(255, 208, 0, 0.611);
+ border: 3px solid #555;
+}
+button:hover {
+ background-color: #555;
+}
+
+
+</style>
+
+
+
+
+
+
+
+ <body>
+  <!--!header / основное меню-->
+  <div class="header">
+    <nav>
+      <!--Верхнее меню-->
+      <div class="menu">
+        <div class="logo"><a href="index.html">BookWorm</a></div>
+        <input type="radio" name="slider" id="menu-btn">
+        <input type="radio" name="slider" id="close-btn">
+        <ul class="nav-links">
+          <!--Бургер закрыть меню-->
+          <label for="close-btn" class="btn close-btn">
+            <i class="fas fa-times">
+            </i>
+            <div class="icon-book">
+              <img src="icons/icon-close.png"
+                width="55px"
+                height="55px">
+            </div>
+          </label>
+          <li><a href="index.html">Библиотека</a></li>
+          <li>
+            <a href="index.html" class="desktop-item">Жанры</a>
+            <input type="checkbox" id="showDrop">
+            <label for="showDrop" class="mobile-item">Жанры</label>
+            <ul class="drop-menu">
+              <li><a href="index.html">Роман</a></li>
+              <li><a href="index.html">Поэма</a></li>
+              <li><a href="index.html">Повесть</a></li>
+              <li><a href="index.html">Комедия</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="index.html" class="desktop-item">Навигация</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">Навигация</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <img src="icons/worm.png" alt="Червяк на листе">
+                </div>
+                <div class="row">
+                  <header>Жанры</header>
+                  <ul class="mega-links">
+                    <li><a href="index.html">Роман</a></li>
+                    <li><a href="index.html">Поэма</a></li>
+                    <li><a href="index.html">Повесть</a></li>
+                    <li><a href="index.html">Комедия</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>Рейтинг</header>
+                  <ul class="mega-links">
+                    <li><a href="best-day.html#day">Лучшее за день</a></li>
+                    <li><a href="best-day.html#week">Лучшее за неделю</a></li>
+                    <li><a href="best-day.html#m">Лучшее за месяц</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>Навигация</header>
+                  <ul class="mega-links">
+                    <li><a href="contacts.html">Наш адрес</a></li>
+                    <li><a href="quotes.html">Цитаты</a></li>
+                    <li><a href="donat.html">Поддержка</a></li>
+                    <li><a href="feedback.html">Обратная связь</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li><a href="feedback.html">Обратная связь</a></li>
+        </ul>
+        <!--Бургер открыть меню-->
+        <label for="menu-btn" class="btn menu-btn">
+          <i class="fas fa-bars">
+            <div class="icon-book">
+              <img src="icons/icon-book.png"
+                width="55px"
+                height="55px">
+            </div>
+          </i></label>
+      </div>
+    </nav>
+  </div>
+  <!--!sidebar / боковое меню-->
+  <div class="sidebar">
+    <p><a href="contacts.html">Контакты</a></p>
+    <p><a href="donat.html">Поддержите нас!</a></p>
+    <p><a href="quotes.html">Цитаты из книг</a></p>
+    <p><a href="feedback.html">Обратная связь</a></p>
+
+    <p>BookWorm рекомендует:</p>
+    <img src="covers/mertviedushi.jpg"
+    width="115px"
+    height="190px">
+  </div>
+  <!--!content / контент-->
+  <div class="content">
+    <h2>Добро пожаловать в электронную библиотеку!</h2>
+    <p>На данный момент в нашей библиотеке находится N книг различных жанров от разных авторов! Вы <strong>точно</strong> найдете свою любимую книгу тут. Если по каким-то причинам Вы не видите своей любимой книги тут, то напишите нам в форму <a href="feedback.html">обратной связи</a></p>
+    <div class="book-list">
+      <div class="row-books">
+        <div class="book-column-0">
+          <img src="icons/icon-search1.png"
+          width="60px"
+          height="60px">
+          <input type="text" id="myFilter" class="filter-control" onkeyup="functionFindByName()" placeholder="Поиск по названию книги...">
+        </div>
+        <div class="book-column-0">
+          <img src="icons/icon-search2.png"
+          width="60px"
+          height="60px">
+          <input type="text" id="myFilter2" class="filter-control" onkeyup="functionFindByAuthor()" placeholder="Поиск по имени автора...">
+        </div>
+
+        <input type="text" id="genreFilter" placeholder="Фильтр по жанру">
+        <input type="text" id="pagesFilter" placeholder="Фильтр по количеству страниц">
+        <input type="text" id="izdFilter" placeholder="Фильтр по издательству">
+        <button onclick="filterBooks(document.getElementById('genreFilter').value, document.getElementById('pagesFilter').value, document.getElementById('izdFilter').value)">Фильтровать</button>
+        <button onclick="resetFilter()">Сбросить фильтр</button>
+
+         
+      </div>
+      <div class="row" id="myItems">
+        <div class="book-column-1">
+          <!--Тело книги1-->
+          <div class="bookObject">
+            <div class="book-body">
+              <div class="book-top2">
+                <div class="book-cover">
+                  <img src="covers/beci.jpg">
+                </div>
+                <div class="book-item-r">
+                  <h5 class="bookObject-title">"Бесы"</a></h5>
+                  <div class="b-author">
+                    <p>Автор:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-author">Федор Михайлович Достоевский</h6>
+                  </div>
+                  <div class="b-genre">
+                    <p>Жанр:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-genre">Роман</h6>
+                  </div>
+                  <div class="b-pages">
+                    <p>Количество страниц:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-pages">704</h6>
+                  </div>
+                  <div class="b-izd">
+                    <p>Издательство:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-izd">АСТ</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="book-item-b">
+                <p class="bookObject-annotation">
+                  
+                  <button id="expandDescription1">Развернуть описание</button>
+                  <button id="collapseDescription1" style="display: none;">Свернуть описание</button>
+                  <div id="description1" style="display: none;">"Бесы" (1871-1872 гг.) — наверное, самый пророческий роман Достоевского. Изначально задуманный как острополитическая вещь, основанная на впечатлениях писателя от "нечаевского процесса": группу революционеров судили за убийство студента, решившего выйти из их кружка, — роман далеко перерос просто произведение на "злобу дня".
+                    На глазах у читателей разворачивается настоящая драма: в центре повестования — группа нигилистов во главе с Петром Верховенским, планирующая поднять смуту по всей России. У главного же героя романа Николая Ставрогина — своя тайна, свой страшный грех и своя большая беда — он совершенно опустошен, и жизнь уже не представляет для него никакого интереса. События в романе проносятся вихрем перед читателем, запутываются в какой-то чудовищный клубок и в результате разрешаются трагедией.
+                    Настоящее в романе Достоевского тесно связано с прошлым: он видит истоки нигилистических настроений у детей в их отцах-идеалистах, совершенно не знающих России. Но уникальность "Бесов" еще и в том, что на примере этих персонажей Достоевский живописует всю Россию, одержимую бесами, — вчера, сегодня, завтра безумие преследует нас.</p>
+                  </div>
+                  <p>Ссылка для скачивания:</p>
+                <div class="book-download-fb2">
+                  <a href="texts/Dostoevskiyi_F._BesiyI.fb2" download>
+                    <img src="icons/icon-fb2.png">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Тело книги2-->
+          <div class="bookObject">
+            <div class="book-body">
+              <div class="book-top2">
+                <div class="book-cover">
+                  <img src="covers/mertviedushi.jpg">
+                </div>
+                <div class="book-item-r">
+                  <h5 class="bookObject-title">"Мертвые души"</a></h5>
+                  <div class="b-author">
+                    <p>Автор:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-author">Николай Васильевич Гоголь</h6>
+                  </div>
+                  <div class="b-genre">
+                    <p>Жанр:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-genre">Поэма</h6>
+                  </div>
+                  <div class="b-pages">
+                    <p>Количество страниц:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-pages">301</h6>
+                  </div>
+                  <div class="b-izd">
+                    <p>Издательство:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-izd">Школьная библиотека</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="book-item-b">
+                <p class="bookObject-annotation">
+                  
+                  <button id="expandDescription2">Развернуть описание</button>
+                  <button id="collapseDescription2" style="display: none;">Свернуть описание</button>
+                  <div id="description2" style="display: none;">«Мёртвые души» — произведение Николая Васильевича Гоголя, жанр которого сам автор обозначил как поэма.
+                    Писать книгу Гоголь начал в 1835 году как трёхтомник. Первый том был издан в 1842 году. Практически готовый второй том был утерян, но сохранилось несколько глав в черновиках. Третий том не был начат, о нём остались только отдельные сведения, которые были опубликованы вскоре после смерти автора в 1852 году.</div>
+                  <p>Ссылка для скачивания:</p>
+                <div class="book-download-fb2">
+                  <a href="texts/Gogol_N._Mertviye_DushiI.fb2" download>
+                    <img src="icons/icon-fb2.png">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+          <!--Тело книги3-->
+          <div class="bookObject">
+            <div class="book-body">
+              <div class="book-top2">
+                <div class="book-cover">
+                  <img src="covers/palata6.jpg">
+                </div>
+                <div class="book-item-r">
+                  <h5 class="bookObject-title">"Палата №6"</a></h5>
+                  <div class="b-author">
+                    <p>Автор:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-author">Антон Павлович Чехов</h6>
+                  </div>
+                  <div class="b-genre">
+                    <p>Жанр:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-genre">Повесть</h6>
+                  </div>
+                  <div class="b-pages">
+                    <p>Количество страниц:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-pages">416</h6>
+                  </div>
+                  <div class="b-izd">
+                    <p>Издательство:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-izd">АСТ</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="book-item-b">
+                <p class="bookObject-annotation">
+                  
+                  <button id="expandDescription3">Развернуть описание</button>
+                  <button id="collapseDescription3" style="display: none;">Свернуть описание</button>
+                  <div id="description3" style="display: none;">
+                    «Пала́та № 6» (современниками название читалось как «Палата номер шестой») — повесть Антона Павловича Чехова. Впервые она была опубликована в 1892 году в журнале «Русская мысль».
+                  </div>
+                  <p>Ссылка для скачивания:</p>
+                <div class="book-download-fb2">
+                  <a href="texts/Chehov_A._Spisokshkolnoy._Palata_N_6.fb2" download>
+                    <img src="icons/icon-fb2.png">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Тело книги4-->
+          <div class="bookObject">
+            <div class="book-body">
+              <div class="book-top2">
+                <div class="book-cover">
+                  <img src="covers/revizor.jpg">
+                </div>
+                <div class="book-item-r">
+                  <h5 class="bookObject-title">"Ревизор"</a></h5>
+                  <div class="b-author">
+                    <p>Автор:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-author">Николай Васильевич Гоголь</h6>
+                  </div>
+                  <div class="b-genre">
+                    <p>Жанр:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-genre">Комедия</h6>
+                  </div>
+                  <div class="b-pages">
+                    <p>Количество страниц:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-pages">148</h6>
+                  </div>
+                  <div class="b-izd">
+                    <p>Издательство:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-izd">Малая избранная классика</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="book-item-b">
+                <p class="bookObject-annotation">
+                  
+                  <button id="expandDescription4">Развернуть описание</button>
+                  <button id="collapseDescription4" style="display: none;">Свернуть описание</button>
+                  <div id="description4" style="display: none;">Комедия в пяти действиях русского писателя Николая Васильевича Гоголя. Годом написания считается 1835 год, однако окончательные правки в свое произведение Н. В. Гоголь внёс в 1842 году. Темой этой комедии социально-сатирической направленности являются пороки общества, чиновничество и его бездеятельность, лицемерие, духовная бедность, общечеловеческая глупость.</div>
+                  <p>Ссылка для скачивания:</p>
+                <div class="book-download-fb2">
+                  <a href="texts/Gogol_N._Spisokshkolnoy._Revizor.fb2" download>
+                    <img src="icons/icon-fb2.png">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Тело книги5-->
+          <div class="bookObject">
+            <div class="book-body">
+              <div class="book-top2">
+                <div class="book-cover">
+                  <img src="covers/dubrovskii.jpg">
+                </div>
+                <div class="book-item-r">
+                  <h5 class="bookObject-title">"Дубровский"</a></h5>
+                  <div class="b-author">
+                    <p>Автор:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-author">Александр Сергеевич Пушкин</h6>
+                  </div>
+                  <div class="b-genre">
+                    <p>Жанр:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-genre">Роман</h6>
+                  </div>
+                  <div class="b-pages">
+                    <p>Количество страниц:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-pages">90</h6>
+                  </div>
+                  <div class="b-izd">
+                    <p>Издательство:&nbsp;</p> <!--&nbsp; - неразрывный пробел-->
+                    <h6 class="bookObject-izd">ЭКСМО</h6>
+                  </div>
+                </div>
+              </div>
+              <div class="book-item-b">
+                <p class="bookObject-annotation">
+                  
+                  <button id="expandDescription5">Развернуть описание</button>
+                  <button id="collapseDescription5" style="display: none;">Свернуть описание</button>
+                  <div id="description5" style="display: none;">Наиболее известный разбойничий роман на русском языке, необработанное для печати произведение А. С. Пушкина. Повествует о любви Владимира Дубровского к Марии Троекуровой - потомков двух враждующих помещичьих семейств.</div>
+                  <p>Ссылка для скачивания:</p>
+                <div class="book-download-fb2">
+                  <a href="texts/Pushkin_A._Spisokshkolnoy._Dubrovskiyi.fb2" download>
+                    <img src="icons/icon-fb2.png">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+     
+        </div>    
+      </div>
+    </div>
+  </div>
+  <!--footer / подвал сайта-->
+  <div class="footer">
+    <p>НАШИ СОЦИАЛЬНЫЕ СЕТИ</p>
+    <ul class="social-media-list">
+      <li><a href="https://www.instagram.com"><img src="icons/insta.png" alt="Instagram" title="Instagram"></a></li>
+      <li><a href="https://web.whatsapp.com"><img src="icons/wt.png" alt="WhatsApp" title="WhatsAp"></a></li>
+      <li><a href="https://web.telegram.org"><img src="icons/tg.png" alt="Telegram" title="Telegram"></a></li>
+      <li><a href="https://www.facebook.com"><img src="icons/facebook.png" alt="facebook" title="facebook"></a></li>
+      <li><a href="https://vk.com"><img src="icons/vk.png" alt="VK" title="VK"></a></li>
+      <li><a href="https://github.com"><img src="icons/github.png" alt="GitHub" title="GitHub"></a></li>
+      <li><a href="https://www.youtube.com/"><img src="icons/youtube.png" alt="YouTube" title="Youtube"></a></li> 
+    </ul>
+    <div class="footer-line">&copy;BookWorm 2023 - все права защищены.
+      <p>Копирование и распространение материалов с сайта разрешено только с указанием активной ссылки на источник. Мнение авторов и посетителей сайта может не совпадать с мнением редакции.</p>
+    </div>
+    <div class="footer-love">Сделано с любовью ❤️</div>
+  </div>
+  <!-- partial / scripts / подключения на все скрипты тут -->
+  <script>
+    function functionFindByName() {
+    var input, filter, bookObjects, bookObjectContainer, h5, title, i;
+    input = document.getElementById("myFilter");
+    filter = input.value.toUpperCase();
+    bookObjectContainer = document.getElementById("myItems");
+    bookObjects = bookObjectContainer.getElementsByClassName("bookObject");
+    for (i = 0; i < bookObjects.length; i++) {
+        title = bookObjects[i].querySelector(".book-body h5.bookObject-title");
+        if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+            bookObjects[i].style.display = "";
+        } else {
+            bookObjects[i].style.display = "none";
+        }
+      }
+    }
+  function functionFindByAuthor() {
+  var input, filter, bookObjects, bookObjectContainer, h6, author, i;
+  input = document.getElementById("myFilter2");
+  filter = input.value.toUpperCase();
+  bookObjectContainer = document.getElementById("myItems");
+  bookObjects = bookObjectContainer.getElementsByClassName("bookObject");
+  for (i = 0; i < bookObjects.length; i++) {
+      author = bookObjects[i].querySelector(".book-body h6.bookObject-author");
+      if (author.innerText.toUpperCase().indexOf(filter) > -1) {
+          bookObjects[i].style.display = "";
+      } else {
+          bookObjects[i].style.display = "none";
+      }
+    }
+  }
+//Развернуть описание/свернуть описание для уникальных элементов
+  document.getElementById('expandDescription1').addEventListener('click', function() {
+  document.getElementById('description1').style.display = 'block';
+  document.getElementById('expandDescription1').style.display = 'none';
+  document.getElementById('collapseDescription1').style.display = 'inline';
+ });
+
+ document.getElementById('collapseDescription1').addEventListener('click', function() {
+  document.getElementById('description1').style.display = 'none';
+  document.getElementById('expandDescription1').style.display = 'inline';
+  document.getElementById('collapseDescription1').style.display = 'none';
+ });
+ //Развернуть описание/свернуть описание для уникальных элементов
+ document.getElementById('expandDescription2').addEventListener('click', function() {
+  document.getElementById('description2').style.display = 'block';
+  document.getElementById('expandDescription2').style.display = 'none';
+  document.getElementById('collapseDescription2').style.display = 'inline';
+ });
+
+ document.getElementById('collapseDescription2').addEventListener('click', function() {
+  document.getElementById('description2').style.display = 'none';
+  document.getElementById('expandDescription2').style.display = 'inline';
+  document.getElementById('collapseDescription2').style.display = 'none';
+ });
+ //Развернуть описание/свернуть описание для уникальных элементов
+ document.getElementById('expandDescription3').addEventListener('click', function() {
+  document.getElementById('description3').style.display = 'block';
+  document.getElementById('expandDescription3').style.display = 'none';
+  document.getElementById('collapseDescription3').style.display = 'inline';
+ });
+
+ document.getElementById('collapseDescription3').addEventListener('click', function() {
+  document.getElementById('description3').style.display = 'none';
+  document.getElementById('expandDescription3').style.display = 'inline';
+  document.getElementById('collapseDescription3').style.display = 'none';
+ });
+ //Развернуть описание/свернуть описание для уникальных элементов
+ document.getElementById('expandDescription4').addEventListener('click', function() {
+  document.getElementById('description4').style.display = 'block';
+  document.getElementById('expandDescription4').style.display = 'none';
+  document.getElementById('collapseDescription4').style.display = 'inline';
+ });
+
+ document.getElementById('collapseDescription4').addEventListener('click', function() {
+  document.getElementById('description4').style.display = 'none';
+  document.getElementById('expandDescription4').style.display = 'inline';
+  document.getElementById('collapseDescription4').style.display = 'none';
+ });
+ //Развернуть описание/свернуть описание для уникальных элементов
+ document.getElementById('expandDescription5').addEventListener('click', function() {
+  document.getElementById('description5').style.display = 'block';
+  document.getElementById('expandDescription5').style.display = 'none';
+  document.getElementById('collapseDescription5').style.display = 'inline';
+ });
+
+ document.getElementById('collapseDescription5').addEventListener('click', function() {
+  document.getElementById('description5').style.display = 'none';
+  document.getElementById('expandDescription5').style.display = 'inline';
+  document.getElementById('collapseDescription5').style.display = 'none';
+ });
+
+ 
+
+//filterForm
+var form = document.getElementById('filterForm');
+var author = form.elements['author'];
+var genre = form.elements['genre'];
+var pages = form.elements['pages'];
+
+form.addEventListener('submit', function(event) {
+ event.preventDefault(); // Предотвращаем отправку формы
+
+ var selectedAuthor = author.value;
+ var selectedGenre = genre.value;
+ var selectedPages = pages.value;
+});
+
+var books = document.querySelectorAll('.bookObject'); //Получаем все книги
+
+var filteredBooks = Array.from(books).filter(function(book) {
+ var author = book.querySelector('.bookObject-author').textContent;
+ var genre = book.getAttribute('data-genre');
+ var pages = book.getAttribute('data-pages'); 
+
+ return (selectedAuthor === '' || author === selectedAuthor) &&
+        (selectedGenre === '' || genre === selectedGenre) &&
+        (selectedPages === '' || pages === selectedPages);
+});
+
+filteredBooks.forEach(function(book) {
+ book.style.display = ''; // Показываем книгу
+});
+
+books.forEach(function(book) {
+ if (!filteredBooks.includes(book)) {
+   book.style.display = 'none'; // Скрываем книгу
+ }
+});
+
+function filterBooks(genre, pages, izd) {
+ var books = Array.from(document.querySelectorAll('.bookObject'));
+ for (var i = 0; i < books.length; i++) {
+     var book = books[i];
+     var bookGenre = book.querySelector('.bookObject-genre').innerText;
+     var bookPages = book.querySelector('.bookObject-pages').innerText;
+     var bookIzd = book.querySelector('.bookObject-izd').innerText;
+     if ((genre == '' || bookGenre == genre) &&
+         (pages == '' || bookPages == pages) &&
+         (izd == '' || bookIzd == izd)) {
+         book.style.display = '';
+     } else {
+         book.style.display = 'none';
+     }
+ }
+}
+//---------------------------------------
+
+
+  </script>
+ </body>
+</html>
