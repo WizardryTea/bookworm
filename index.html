@@ -14,19 +14,23 @@
     <link rel="icon" type="image/png"href="img\favicon.png">
     <!--Подключаем наш файл стилей CSS-->
     <link rel="stylesheet" href="css/styles.css" type="text/css">
-    <script src="js/main.js"></script>
   </head>
 
 <style>
-
+.promo img{
+  width: 100%;
+  height: auto;
+}
 /*--------------------bookObjects--------------------------------*/
 .container {
   padding: 10px;
 }
-
 ul li {
-  list-style: none;
-  
+  list-style: none
+}
+.book-cover img{
+  border-style: double;
+  border-radius: 10px;
 }
 /*-----------booklist----------------------------------------------*/
 .book-body {
@@ -40,30 +44,34 @@ ul li {
   margin: 5px;
   border-color: #351E10;
   min-width: 200px;
+  box-shadow: inset 10px 10px 100px 0px #ccb07d;
 }
 .book-body {
   display: flex;
   margin: 0;
 }
-
 .book-top2 {
   display: flex;
   flex-direction: start;
 }
-
 .book-cover {
   margin-right: 20px;
-}
-
-.book-item-b {
-  margin-top: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  max-width: 250px;
+  max-height: 363px;
 }
 .book-download-fb2{
-  width: 8%;
-  min-width: 40px;
-  max-width: 60px;
+  display: flex;
+  flex-direction: row;
+  
 }
-
+.book-download-fb2 img{
+  max-width: 240px;
+  max-height: 80px;
+  object-fit: contain;
+}
 .filter-control {
  background-color: rgb(240, 240, 240);
  padding: 15px 32px;
@@ -102,31 +110,34 @@ ul li {
 .description {
   display: none;
 }
-
-.drop-menu li a{
- max-width: -webkit-fill-available;
-}
-
 /*---------------------------------------------------------*/
+.filter-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/*------*/
 input[type=text] {
- width: 100%;
- padding: 12px 20px;
- margin: 8px 0;
- box-sizing: border-box;
- border: 2px solid #ccc;
- border-radius: 4px;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-family: "Russo One";
 }
 button {
- background-color: #351E10;
- border: none;
- color: white;
- padding: 15px 32px;
- text-align: center;
- text-decoration: none;
- display: inline-block;
- font-size: 16px;
- margin: 4px 2px;
- cursor: pointer;
+  min-width: 195px;
+  background-color: #351E10;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 input[type=text]:focus {
  background-color: rgba(255, 208, 0, 0.611);
@@ -135,8 +146,65 @@ input[type=text]:focus {
 button:hover {
  background-color: #555;
 }
-
-
+/*-----------------------------------*/
+.book-item-r,  .bookObject-annotation p{
+  font-family: "Russo One";
+  display: flex;
+  flex-direction: column;
+}
+.book-item-r p, h6{
+  margin: 16px 0px 16px 0px;
+  padding: 0px;
+}
+.bookObject-title{
+  margin-top: 0px;
+  margin-bottom: 32px;
+  font-size: 32px;
+  font-family: "Rubik Doodle Shadow";
+}
+.filter-box select{
+  font-family: "Russo One";
+  width: 400px;
+  font-size: 16px;
+  padding: 15px 10px;
+  margin: 5px 0px;
+  color: #333;
+  border: 3px solid #ccc;
+  border-radius: 4px;
+  background-color: #d9d9d9;
+}
+option:checked, option:hover {
+   background-color: #351E10;
+   color: #ccc;
+}
+.filter-box2{
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 450px) {
+  .filter-box2{
+    flex-direction: column;
+  }
+  .filter-box select{
+    font-size: 12px;
+    max-width: 250px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .book-top2{
+    flex-direction: column;
+  }
+  .book-cover{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .book-item-r .bookObject-title{
+  margin-top: 8px;
+  text-align: center;
+  }
+}
 </style>
  <body>
   <!--!header / основное меню-->
@@ -158,16 +226,15 @@ button:hover {
                 height="55px">
             </div>
           </label>
-          <li><a href="index.html">Библиотека</a></li>
           <li>
             <a href="index.html" class="desktop-item">Жанры</a>
             <input type="checkbox" id="showDrop">
             <label for="showDrop" class="mobile-item">Жанры</label>
             <ul class="drop-menu">
-              <li><a href="index.html">Роман</a></li>
-              <li><a href="index.html">Поэма</a></li>
-              <li><a href="index.html">Повесть</a></li>
-              <li><a href="index.html">Комедия</a></li>
+              <li><a href="#" onclick="filterByGenre('Роман')">Роман</a></li>
+              <li><a href="#" onclick="filterByGenre('Поэма')">Поэма</a></li>
+              <li><a href="#" onclick="filterByGenre('Повесть')">Повесть</a></li>
+              <li><a href="#" onclick="filterByGenre('Комедия')">Комедия</a></li>
             </ul>
           </li>
           <li>
@@ -182,10 +249,10 @@ button:hover {
                 <div class="row">
                   <header>Жанры</header>
                   <ul class="mega-links">
-                    <li><a href="index.html">Роман</a></li>
-                    <li><a href="index.html">Поэма</a></li>
-                    <li><a href="index.html">Повесть</a></li>
-                    <li><a href="index.html">Комедия</a></li>
+                    <li><a href="#" onclick="filterByGenre('Роман')">Роман</a></li>
+                    <li><a href="#" onclick="filterByGenre('Поэма')">Поэма</a></li>
+                    <li><a href="#" onclick="filterByGenre('Повесть')">Повесть</a></li>
+                    <li><a href="#" onclick="filterByGenre('Комедия')">Комедия</a></li>
                   </ul>
                 </div>
                 <div class="row">
@@ -224,20 +291,22 @@ button:hover {
   </div>
   <!--!sidebar / боковое меню-->
   <div class="sidebar">
-    <p><a href="contacts.html">Контакты</a></p>
-    <p><a href="donat.html">Поддержите нас!</a></p>
-    <p><a href="quotes.html">Цитаты из книг</a></p>
-    <p><a href="feedback.html">Обратная связь</a></p>
-
-    <p>BookWorm рекомендует:</p>
+    <ul>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="donat.html">Поддержите нас!</a></li>
+      <li><a href="quotes.html">Цитаты из книг</a></li>
+      <li><a href="feedback.html">Обратная связь</a></li>
+    </ul>
+    <p class="bwr">BookWorm рекомендует:</p>
     <img src="covers/mertviedushi.jpg"
     width="115px"
-    height="190px">
+    height="190px" class="img-aside">
   </div>
+  
   <!--!content / контент-->
-  <div class="content">
+  <div class="content">    
     <h2>Добро пожаловать в электронную библиотеку!</h2>
-    <p>На данный момент в нашей библиотеке находится N книг различных жанров от разных авторов! Вы <strong>точно</strong> найдете свою любимую книгу тут. Если по каким-то причинам Вы не видите своей любимой книги тут, то напишите нам в форму <a href="feedback.html">обратной связи</a></p>
+    <p>На данный момент в нашей библиотеке находится 5 книг различных жанров от разных авторов! Вы <strong>точно</strong> найдете свою любимую книгу тут. Если по каким-то причинам Вы не видите своей любимой книги тут, то напишите нам в форму <a href="feedback.html">обратной связи</a></p>
     <div class="book-list">
       <div class="row-books">
         <div class="book-column-0">
@@ -252,11 +321,35 @@ button:hover {
           height="60px">
           <input type="text" id="myFilter2" class="filter-control" onkeyup="functionFindByAuthor()" placeholder="Поиск по имени автора...">
         </div>
-        <input type="text" id="genreFilter" placeholder="Фильтр по жанру">
-        <input type="text" id="pagesFilter" placeholder="Фильтр по количеству страниц">
-        <input type="text" id="izdFilter" placeholder="Фильтр по издательству">
-        <button onclick="filterBooks(document.getElementById('genreFilter').value, document.getElementById('pagesFilter').value, document.getElementById('izdFilter').value)">Фильтровать</button>
-        <button onclick="resetFilter()">Сбросить фильтр</button>
+      <div class="filter-box">
+        <select id="genreFilter">
+          <option value="">Выберите жанр</option>
+          <option value="Роман">Роман</option>
+          <option value="Поэма">Поэма</option>
+          <option value="Повесть">Повесть</option>
+          <option value="Комедия">Комедия</option>
+        </select>
+        <select id="pagesFilter">
+          <option value="">Выберите количество страниц</option>
+          <option value="90">90</option>
+          <option value="148">148</option>
+          <option value="301">301</option>
+          <option value="416">416</option>
+          <option value="704">704</option>
+        </select>
+        <select id="izdFilter">
+          <option value="">Выберите издательство</option>
+          <option value="АСТ">АСТ</option>
+          <option value="Школьная библиотека">Школьная библиотека</option>
+          <option value="Малая избранная классика">Малая избранная классика</option>
+          <option value="Школьная библиотека">Школьная библиотека</option>
+          <option value="ЭКСМО">ЭКСМО</option>
+        </select>
+        <div class="filter-box2">
+          <button onclick="filterBooks(document.getElementById('genreFilter').value, document.getElementById('pagesFilter').value, document.getElementById('izdFilter').value)">Фильтровать</button>
+          <button onclick="resetFilter()">Сбросить фильтр</button>
+        </div>
+       </div>
       </div>
       <div class="row" id="myItems">
         <div class="book-column-1">
@@ -288,18 +381,25 @@ button:hover {
                 </div>
               </div>
               <div class="book-item-b">
-                <p class="bookObject-annotation">
+                <div class="bookObject-annotation">
                   <button id="expandDescription1">Развернуть описание</button>
                   <button id="collapseDescription1" style="display: none;">Свернуть описание</button>
                   <div id="description1" style="display: none;">"Бесы" (1871-1872 гг.) — наверное, самый пророческий роман Достоевского. Изначально задуманный как острополитическая вещь, основанная на впечатлениях писателя от "нечаевского процесса": группу революционеров судили за убийство студента, решившего выйти из их кружка, — роман далеко перерос просто произведение на "злобу дня".
                     На глазах у читателей разворачивается настоящая драма: в центре повестования — группа нигилистов во главе с Петром Верховенским, планирующая поднять смуту по всей России. У главного же героя романа Николая Ставрогина — своя тайна, свой страшный грех и своя большая беда — он совершенно опустошен, и жизнь уже не представляет для него никакого интереса. События в романе проносятся вихрем перед читателем, запутываются в какой-то чудовищный клубок и в результате разрешаются трагедией.
                     Настоящее в романе Достоевского тесно связано с прошлым: он видит истоки нигилистических настроений у детей в их отцах-идеалистах, совершенно не знающих России. Но уникальность "Бесов" еще и в том, что на примере этих персонажей Достоевский живописует всю Россию, одержимую бесами, — вчера, сегодня, завтра безумие преследует нас.</p>
                   </div>
-                  <p>Ссылка для скачивания:</p>
-                <div class="book-download-fb2">
-                  <a href="texts/Dostoevskiyi_F._BesiyI.fb2" download>
-                    <img src="icons/icon-fb2.png">
-                  </a>
+                  <p>Ссылки для скачивания:</p>
+                  <div class="book-download-fb2">
+                    <a href="texts/Dostoevskiyi_F._BesiyI.fb2" download>
+                      <img src="icons/icon-fb2.png">
+                    </a>
+                    <a href="texts/Beci.txt" download>
+                      <img src="icons/icon-txt.png">
+                    </a>
+                    <a href="texts/beci.doc" download>
+                      <img src="icons/icon-doc.png">
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -333,16 +433,20 @@ button:hover {
                 </div>
               </div>
               <div class="book-item-b">
-                <p class="bookObject-annotation">
+                <div class="bookObject-annotation">
                   <button id="expandDescription2">Развернуть описание</button>
                   <button id="collapseDescription2" style="display: none;">Свернуть описание</button>
                   <div id="description2" style="display: none;">«Мёртвые души» — произведение Николая Васильевича Гоголя, жанр которого сам автор обозначил как поэма.
                     Писать книгу Гоголь начал в 1835 году как трёхтомник. Первый том был издан в 1842 году. Практически готовый второй том был утерян, но сохранилось несколько глав в черновиках. Третий том не был начат, о нём остались только отдельные сведения, которые были опубликованы вскоре после смерти автора в 1852 году.</div>
-                  <p>Ссылка для скачивания:</p>
-                <div class="book-download-fb2">
-                  <a href="texts/Gogol_N._Mertviye_DushiI.fb2" download>
-                    <img src="icons/icon-fb2.png">
-                  </a>
+                  <p>Ссылки для скачивания:</p>
+                  <div class="book-download-fb2">
+                    <a href="texts/Gogol_N._Mertviye_DushiI.fb2" download>
+                      <img src="icons/icon-fb2.png">
+                    </a>
+                    <a href="texts/mertvye-dushi.txt" download>
+                      <img src="icons/icon-txt.png">
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -376,17 +480,18 @@ button:hover {
                 </div>
               </div>
               <div class="book-item-b">
-                <p class="bookObject-annotation">
+                <div class="bookObject-annotation">
                   <button id="expandDescription3">Развернуть описание</button>
                   <button id="collapseDescription3" style="display: none;">Свернуть описание</button>
                   <div id="description3" style="display: none;">
                     «Пала́та № 6» (современниками название читалось как «Палата номер шестой») — повесть Антона Павловича Чехова. Впервые она была опубликована в 1892 году в журнале «Русская мысль».
                   </div>
-                  <p>Ссылка для скачивания:</p>
-                <div class="book-download-fb2">
-                  <a href="texts/Chehov_A._Spisokshkolnoy._Palata_N_6.fb2" download>
-                    <img src="icons/icon-fb2.png">
-                  </a>
+                  <p>Ссылки для скачивания:</p>
+                  <div class="book-download-fb2">
+                    <a href="texts/Chehov_A._Spisokshkolnoy._Palata_N_6.fb2" download>
+                      <img src="icons/icon-fb2.png">
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -420,15 +525,16 @@ button:hover {
                 </div>
               </div>
               <div class="book-item-b">
-                <p class="bookObject-annotation">
+                <div class="bookObject-annotation">
                   <button id="expandDescription4">Развернуть описание</button>
                   <button id="collapseDescription4" style="display: none;">Свернуть описание</button>
                   <div id="description4" style="display: none;">Комедия в пяти действиях русского писателя Николая Васильевича Гоголя. Годом написания считается 1835 год, однако окончательные правки в свое произведение Н. В. Гоголь внёс в 1842 году. Темой этой комедии социально-сатирической направленности являются пороки общества, чиновничество и его бездеятельность, лицемерие, духовная бедность, общечеловеческая глупость.</div>
-                  <p>Ссылка для скачивания:</p>
-                <div class="book-download-fb2">
-                  <a href="texts/Gogol_N._Spisokshkolnoy._Revizor.fb2" download>
-                    <img src="icons/icon-fb2.png">
-                  </a>
+                  <p>Ссылки для скачивания:</p>
+                  <div class="book-download-fb2">
+                    <a href="texts/Gogol_N._Spisokshkolnoy._Revizor.fb2" download>
+                      <img src="icons/icon-fb2.png">
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -462,15 +568,16 @@ button:hover {
                 </div>
               </div>
               <div class="book-item-b">
-                <p class="bookObject-annotation">
+                <div class="bookObject-annotation">
                   <button id="expandDescription5">Развернуть описание</button>
                   <button id="collapseDescription5" style="display: none;">Свернуть описание</button>
                   <div id="description5" style="display: none;">Наиболее известный разбойничий роман на русском языке, необработанное для печати произведение А. С. Пушкина. Повествует о любви Владимира Дубровского к Марии Троекуровой - потомков двух враждующих помещичьих семейств.</div>
-                  <p>Ссылка для скачивания:</p>
-                <div class="book-download-fb2">
-                  <a href="texts/Pushkin_A._Spisokshkolnoy._Dubrovskiyi.fb2" download>
-                    <img src="icons/icon-fb2.png">
-                  </a>
+                  <p>Ссылки для скачивания:</p>
+                  <div class="book-download-fb2">
+                    <a href="texts/Pushkin_A._Spisokshkolnoy._Dubrovskiyi.fb2" download>
+                      <img src="icons/icon-fb2.png">
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -479,6 +586,7 @@ button:hover {
         </div>    
       </div>
     </div>
+    <p>Мы рады видеть Вас на нашем сайте и искренне надеемся на то, что у наших дорогих посетителей получится найти желаемую литературу, подходящую под вкус и настроение.</p>
   </div>
   <!--footer / подвал сайта-->
   <div class="footer">
@@ -499,21 +607,36 @@ button:hover {
   </div>
   <!-- partial / scripts / подключения на все скрипты тут -->
   <script>
+
+    //объявление функции functionFindByName
     function functionFindByName() {
+    //объявление переменных
     var input, filter, bookObjects, bookObjectContainer, h5, title, i;
+    //получение элемента с идентификатором "myFilter" и присвоение его переменной input
     input = document.getElementById("myFilter");
+    //получение значения из input, преобразование его в верхний регистр и присвоение результата переменной filter
     filter = input.value.toUpperCase();
+    //получение элемента с идентификатором "myItems" и присвоение его переменной bookObjectContainer
     bookObjectContainer = document.getElementById("myItems");
+    //получение всех элементов с классом "bookObject" внутри bookObjectContainer и присвоение их массиву bookObjects
     bookObjects = bookObjectContainer.getElementsByClassName("bookObject");
+    //проходим по всем элементам в bookObjects
     for (i = 0; i < bookObjects.length; i++) {
+        //для каждого элемента в bookObjects выполняется поиск первого элемента,
+        //соответствующего селектору ".book-body h5.bookObject-title"
+        //и присвоение его переменной title
         title = bookObjects[i].querySelector(".book-body h5.bookObject-title");
+        //текст заголовка (title) содержит искомую строку filter
         if (title.innerText.toUpperCase().indexOf(filter) > -1) {
-            bookObjects[i].style.display = "";
+          //отобразить элемент
+          bookObjects[i].style.display = "";
         } else {
-            bookObjects[i].style.display = "none";
+          //иначе скрыть элемент
+          bookObjects[i].style.display = "none";
         }
       }
     }
+    
   function functionFindByAuthor() {
   var input, filter, bookObjects, bookObjectContainer, h6, author, i;
   input = document.getElementById("myFilter2");
@@ -631,19 +754,40 @@ books.forEach(function(book) {
 function filterBooks(genre, pages, izd) {
  var books = Array.from(document.querySelectorAll('.bookObject'));
  for (var i = 0; i < books.length; i++) {
-     var book = books[i];
-     var bookGenre = book.querySelector('.bookObject-genre').innerText;
-     var bookPages = book.querySelector('.bookObject-pages').innerText;
-     var bookIzd = book.querySelector('.bookObject-izd').innerText;
-     if ((genre == '' || bookGenre == genre) &&
-         (pages == '' || bookPages == pages) &&
-         (izd == '' || bookIzd == izd)) {
-         book.style.display = '';
-     } else {
-         book.style.display = 'none';
-     }
+   var book = books[i];
+   var bookGenre = book.querySelector('.bookObject-genre').innerText;
+   var bookPages = book.querySelector('.bookObject-pages').innerText;
+   var bookIzd = book.querySelector('.bookObject-izd').innerText;
+   if ((genre == '' || bookGenre == genre) &&
+       (pages == '' || bookPages == pages) &&
+       (izd == '' || bookIzd == izd)) {
+     book.style.display = '';
+   } else {
+     book.style.display = 'none';
+   }
  }
 }
+
+function resetFilter() {
+ document.getElementById('genreFilter').value = '';
+ document.getElementById('pagesFilter').value = '';
+ document.getElementById('izdFilter').value = '';
+ filterBooks(document.getElementById('genreFilter').value, document.getElementById('pagesFilter').value, document.getElementById('izdFilter').value)
+}
+
+ function filterByGenre(genre) {
+   //получить все элементы на странице, которые соответствуют классу bookObject
+   var bookGenres = document.querySelectorAll('.bookObject-genre');
+   //соответствует ли жанр книги переданому в функцию жанру
+   bookGenres.forEach(function(bookGenre) {
+     var genreText = bookGenre.textContent;
+     if (genreText === genre) {
+       bookGenre.closest('.bookObject').style.display = 'block';
+     } else {
+       bookGenre.closest('.bookObject').style.display = 'none';
+     }
+   });
+ }
   </script>
  </body>
 </html>
