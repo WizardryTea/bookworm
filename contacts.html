@@ -16,31 +16,34 @@
     <link rel="stylesheet" href="css/styles.css" type="text/css">
   </head>
 <style>
-
+.txt-center{
+  text-align: center;
+}
+.worktime img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 250px;
+}
 .footer-top-line{
 	padding: 3px;
 	background-color: #303030;
 }
-
 .footer-bottom-copy{
 	text-align: center;
 	padding: 15px;
 	background-color: #303030;
 	color: aliceblue;
 }
-
 .footer-bottom-copy a{
 	color:#ff0000;
   margin: auto;
 	text-align: center;
 }
-
 .map-metro {
- width: 100%;
- max-width: 600px;
- height: 0;
- padding-bottom: 75%; /* Для соотношения сторон 4:3 */
+ /*padding-bottom: 75%; /* Для соотношения сторон 4:3 */
  /*padding-bottom: 56.25%; Соотношение сторон 16:9*/
+ padding-top: 56.25%;
  position: relative;
  overflow: hidden;
 }
@@ -83,17 +86,6 @@
           </label>
           <li><a href="index.html">Библиотека</a></li>
           <li>
-            <a href="index.html" class="desktop-item">Жанры</a>
-            <input type="checkbox" id="showDrop">
-            <label for="showDrop" class="mobile-item">Жанры</label>
-            <ul class="drop-menu">
-              <li><a href="index.html">Роман</a></li>
-              <li><a href="index.html">Поэма</a></li>
-              <li><a href="index.html">Повесть</a></li>
-              <li><a href="index.html">Комедия</a></li>
-            </ul>
-          </li>
-          <li>
             <a href="index.html" class="desktop-item">Навигация</a>
             <input type="checkbox" id="showMega">
             <label for="showMega" class="mobile-item">Навигация</label>
@@ -103,14 +95,10 @@
                   <img src="icons/worm.png" alt="Червяк на листе">
                 </div>
                 <div class="row">
-                  <header>Жанры</header>
-                  <ul class="mega-links">
-                    <li><a href="index.html">Роман</a></li>
-                    <li><a href="index.html">Поэма</a></li>
-                    <li><a href="index.html">Повесть</a></li>
-                    <li><a href="index.html">Комедия</a></li>
-                  </ul>
+                  <header>На главную!</header>
+                  <p>Книги - это наши друзья, поэтому давайте скорее начнем читать!<br><a class="to-main" href="index.html">"Да, скорее хочу!"</a></p>
                 </div>
+
                 <div class="row">
                   <header>Рейтинг</header>
                   <ul class="mega-links">
@@ -147,21 +135,22 @@
   </div>
   <!--!sidebar / боковое меню-->
   <div class="sidebar">
-    <p><a href="contacts.html">Контакты</a></p>
-    <p><a href="donat.html">Поддержите нас!</a></p>
-    <p><a href="quotes.html">Цитаты из книг</a></p>
-    <p><a href="feedback.html">Обратная связь</a></p>
-
-    <p>BookWorm рекомендует:</p>
+    <ul>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="donat.html">Поддержите нас!</a></li>
+      <li><a href="quotes.html">Цитаты из книг</a></li>
+      <li><a href="feedback.html">Обратная связь</a></li>
+    </ul>
+    <p class="bwr">BookWorm рекомендует:</p>
     <img src="covers/mertviedushi.jpg"
     width="115px"
-    height="190px">
+    height="190px" class="img-aside">
   </div>
   <!--!content / контент-->
   <div class="content">
     <div class="footer-center">
 			<a href="index.html">Вернуться к первой теме на главной странице</a>
-			<p><b>КОНТАКТНЫЕ ДАННЫЕ ДЛЯ СВЯЗИ:</b></p>
+			<p class="txt-center"><b>КОНТАКТНЫЕ ДАННЫЕ ДЛЯ СВЯЗИ:</b></p>
       <div d-phone>
   			<a href="tel:+78005553535">Позвонить на горячую линию</a>
 			</div>
@@ -177,7 +166,11 @@
 					referrerpolicy="no-referrer-when-downgrade">
 				</iframe>
 			</div>
-      <br><b>НАШИ СОЦИАЛЬНЫЕ СЕТИ:</b>
+      <p class="txt-center"><b>НАШЕ ВРЕМЯ РАБОТЫ</b>
+      <div class="worktime">
+        <img src="img/work.jpg">
+      </div>
+      <p class="txt-center"><b>НАШИ СОЦИАЛЬНЫЕ СЕТИ:</b>
       <ul class="social-media-list">
         <li><a href="https://www.instagram.com"><img src="icons/insta.png" alt="Instagram" title="Instagram"></a></li>
         <li><a href="https://web.whatsapp.com"><img src="icons/wt.png" alt="WhatsApp" title="WhatsAp"></a></li>
@@ -199,8 +192,6 @@
     <br>
     <img src="img/made-in-russia-sign-ru.svg" class="img-ru">
   </div>
-  
- 
   <!--footer / подвал сайта-->
   <div class="footer">
     <p>НАШИ СОЦИАЛЬНЫЕ СЕТИ</p>
@@ -218,8 +209,5 @@
     </div>
     <div class="footer-love">Сделано с любовью ❤️</div>
   </div>
-  <!-- partial / scripts / подключения на все скрипты тут -->
-  <script>
-</script>
  </body>
 </html>
