@@ -21,16 +21,13 @@
  height: 500px;
  overflow: hidden;
 }
-
 .main-image, .thumbnails img {
  width: 100%;
  height: auto;
 }
-
 .thumbnails img {
  margin-bottom: 10px;
 }
-
 .sub-img img {
  max-width: 200px;
  max-height: 100px;
@@ -40,18 +37,15 @@
   box-shadow: 0px 0px 10px rgba(41, 38, 59, 0.488);
   transition: 0.3s;
 }
-
 @media (max-width: 700px) {
  .gallery {
    width: 100%;
    height: auto;
  }
-
  .main-image, .thumbnails img {
    width: 100%;
    height: auto;
  }
-
  .sub-img img {
    max-width: 100%;
    max-height: auto;
@@ -59,14 +53,14 @@
 }
 /*-----------------------Цитата--------------------------*/
 blockquote {
- background: #ffe9db33;
- border-left: 10px solid #b79165;
- font-style: italic;
- margin: 1.5em 10px;
- padding: 0.5em 10px;
- margin-bottom: 0%;
+  font-family: 'Pacifico', cursive;
+  font-style: italic;
+  background: #ffe9db33;
+  border-left: 10px solid #b79165;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  margin-bottom: 0%;
 }
-
 /*Лево*/
 blockquote:before {
 font-family: "Mr Dafoe", cursive;
@@ -74,7 +68,7 @@ font-family: "Mr Dafoe", cursive;
  content: "\201C"; /* Непечатаемый символ слева */
  font-size: 3em;
  line-height: 0.1em;
- margin-right: 0.2em;
+ margin-right: 0.3em;
  vertical-align: -.4em;
 }
 /*Право*/
@@ -86,18 +80,14 @@ blockquote:after {
  line-height: 0.1em;
  vertical-align: -.45em;
 }
-
 blockquote > p:first-child {
  display: inline;
 }
-
 cite {
   margin-top: 0;
  display: block;
  text-align: right;
 }
-
-
 </style>
 
 <body>
@@ -122,17 +112,6 @@ cite {
           </label>
           <li><a href="index.html">Библиотека</a></li>
           <li>
-            <a href="index.html" class="desktop-item">Жанры</a>
-            <input type="checkbox" id="showDrop">
-            <label for="showDrop" class="mobile-item">Жанры</label>
-            <ul class="drop-menu">
-              <li><a href="index.html">Роман</a></li>
-              <li><a href="index.html">Поэма</a></li>
-              <li><a href="index.html">Повесть</a></li>
-              <li><a href="index.html">Комедия</a></li>
-            </ul>
-          </li>
-          <li>
             <a href="index.html" class="desktop-item">Навигация</a>
             <input type="checkbox" id="showMega">
             <label for="showMega" class="mobile-item">Навигация</label>
@@ -142,14 +121,10 @@ cite {
                   <img src="icons/worm.png" alt="Червяк на листе">
                 </div>
                 <div class="row">
-                  <header>Жанры</header>
-                  <ul class="mega-links">
-                    <li><a href="index.html">Роман</a></li>
-                    <li><a href="index.html">Поэма</a></li>
-                    <li><a href="index.html">Повесть</a></li>
-                    <li><a href="index.html">Комедия</a></li>
-                  </ul>
+                  <header>На главную!</header>
+                  <p>Книги - это наши друзья, поэтому давайте скорее начнем читать!<br><a class="to-main" href="index.html">"Да, скорее хочу!"</a></p>
                 </div>
+
                 <div class="row">
                   <header>Рейтинг</header>
                   <ul class="mega-links">
@@ -186,17 +161,18 @@ cite {
   </div>
   <!--!sidebar / боковое меню-->
   <div class="sidebar">
-    <p><a href="contacts.html">Контакты</a></p>
-    <p><a href="donat.html">Поддержите нас!</a></p>
-    <p><a href="quotes.html">Цитаты из книг</a></p>
-    <p><a href="feedback.html">Обратная связь</a></p>
-
-    <p>BookWorm рекомендует:</p>
+    <ul>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="donat.html">Поддержите нас!</a></li>
+      <li><a href="quotes.html">Цитаты из книг</a></li>
+      <li><a href="feedback.html">Обратная связь</a></li>
+    </ul>
+    <p class="bwr">BookWorm рекомендует:</p>
     <img src="covers/mertviedushi.jpg"
     width="115px"
-    height="190px">
+    height="190px" class="img-aside">
   </div>
-  <!--!content / контент-->
+  <!--content / контент-->
   <div class="content">
 
     <div class="gallery">
@@ -225,9 +201,29 @@ cite {
      <cite>Фёдор Михайлович Достоевский. "Бесы"</cite>
 
      <blockquote>
+      <p>Раз существуют тюрьмы и сумасшедшие дома, то должен же кто-нибудь сидеть в них. Не вы - так я, не я - так кто-нибудь третий.</p>
+     </blockquote>
+     <cite>Антон Павлович Чехов. "Палата №6"</cite>
+
+     <blockquote>
       <p>После обеда господин выкушал чашку кофею и сел на диван, подложивши себе за спину подушку, которую в русских трактирах вместо эластической шерсти набивают чем-то чрезвычайно похожим на кирпич и булыжник.</p>
      </blockquote>
      <cite>Николай Васильевич Гоголь. "Мертвые души"</cite>
+
+     <blockquote>
+      <p>Книги — это ноты, а беседа — пение.</p>
+     </blockquote>
+     <cite>Антон Павлович Чехов. "Палата №6"</cite>
+
+     <blockquote>
+      <p>У царя Давида было кольцо с надписью: «Все проходит». Когда грустно, то от этих слов становится весело, а когда весело, то становится грустно. И я завела себе такое кольцо с еврейскими буквами, и этот талисман удержит меня от увлечений. Все проходит, пройдет и жизнь, значит, ничего не нужно. Или нужно одно лишь сознание свободы, потому что, когда человек свободен, то ему ничего, ничего, ничего не нужно.</p>
+     </blockquote>
+     <cite>Антон Павлович Чехов. "Палата №6"</cite>
+
+     <blockquote>
+      <p>Несколько лет тому назад в одном из своих поместий жил старинный русский барин, Кирила Петрович Троекуров. Его богатство, знатный род и связи давали ему большой вес в губерниях, где находилось его имение. Соседи рады были угождать малейшим его прихотям; губернские чиновники трепетали при его имени; Кирила Петрович принимал знаки подобострастия как надлежащую дань; дом его всегда был полон гостями, готовыми тешить его барскую праздность, разделяя шумные, а иногда и буйные его увеселения. Никто не дерзал отказываться от его приглашения или в известные дни не являться с должным почтением в село Покровское. В домашнем быту Кирила Петрович выказывал все пороки человека необразованного.</p>
+     </blockquote>
+     <cite>Александр Сергеевич Пушкин. "Дубровский"</cite>
 
      <p>&nbsp;&nbsp;&nbsp;Если Вас заинтересовало что-то, то воспользуйтесь поиском на главной странице!</p>
   </div>
@@ -248,13 +244,21 @@ cite {
     </div>
     <div class="footer-love">Сделано с любовью ❤️</div>
   </div>
-  <!-- partial / scripts / подключения на все скрипты тут -->
+  <!-- partial / scripts / подключения на все скрипты тут-->
   <script>
+    //создание галлереи миниатюр изображений. Нажатие на любую миниатюру обновляет главное изображение.
+    //используем метод querySelectorAll для выбора всех элементов img, которые являются потомками элемента с классом .sub-img
+    //результат сохраняется в переменную thumbnails
     var thumbnails = document.querySelectorAll('.sub-img img');
+    //используем метод querySelector для выбора первого элемента с классом .main-image. Результат сохраняем в переменной mainImage
     var mainImage = document.querySelector('.main-image');
-
+    //проходим по каждому элементу в thumbnails с помощью метода forEach
+    //для каждого элемента thumbnail выполняется функция, определенная внутри forEach
     thumbnails.forEach(function(thumbnail) {
+    //добавляем обработчик событий 'click' к текущему элементу thumbnail
+    //когда происходит клик по thumbnail, вызывается функция, определенная внутри addEventListener
     thumbnail.addEventListener('click', function() {
+      //устанавливаем src главного изображения (mainImage) равное src кликнутого миниатюры (this.src).
       mainImage.src = this.src;
     });
     });
