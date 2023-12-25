@@ -14,12 +14,9 @@
     <link rel="icon" type="image/png"href="img\favicon.png">
     <!--Подключаем наш файл стилей CSS-->
     <link rel="stylesheet" href="css/styles.css" type="text/css">
+    <script src="js/main.js"></script>
   </head>
-
 <style>
-
-/*----------------------------------------------------------*/
-
 /*Кнопки На главную сторону и Перевернуть*/
 .button-sent {
   margin-top: 10px;
@@ -45,27 +42,18 @@
   background:rgba(233, 3, 3, 0.876);
   transition: 0.9s;
 }
-
 /*------------------------------------*/
-
-* {
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-}
-
 .cc {
   font-size: 22px;
   font-family: 'Courier New', Courier, monospace;
   background: #8ea0a5;
   border-radius: 20px;
   height: 300px;
-  margin: 7px;
   overflow: hidden;
   padding: 20px;
   position: relative;
   width: 400px;
 }
-
 h2 {
   font: 24px Impact;
   color: #303030;
@@ -73,7 +61,6 @@ h2 {
   margin-bottom: 0;
   text-align: right;
 }
-
 span {
   text-transform: uppercase;
 }
@@ -86,14 +73,15 @@ span {
   flex-direction: row;
   flex-wrap: wrap;
 }
-
+.number{
+  flex-wrap: nowrap;
+}
 .provider {
   display: inline-block;
   margin: 0 10px 10px 0;
   width: 71px;
   height: 44px;
 }
-
 input {
   background: rgba(241, 239, 255, 0.5);
   border: 0;
@@ -133,7 +121,7 @@ input:nth-child(4) {
 }
 
 .full-name {
-  width: 100%;
+  width: 90%;
   text-align: left;
 }
 
@@ -152,7 +140,24 @@ input:nth-child(4) {
 .show-card {
  display: block;
 }
-
+@media screen and (max-width: 560px) {
+  .cc {
+    font-size: 12px;
+    padding: 5px;
+    width: auto;
+    min-width: 215px;
+  }
+  .cc h2{
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  .button-sent{
+    font-size: 10px;
+  }
+  .span-line{
+    font-size: 22px;
+  }
+}
 </style>
 
 <body>
@@ -177,17 +182,6 @@ input:nth-child(4) {
           </label>
           <li><a href="index.html">Библиотека</a></li>
           <li>
-            <a href="index.html" class="desktop-item">Жанры</a>
-            <input type="checkbox" id="showDrop">
-            <label for="showDrop" class="mobile-item">Жанры</label>
-            <ul class="drop-menu">
-              <li><a href="index.html">Роман</a></li>
-              <li><a href="index.html">Поэма</a></li>
-              <li><a href="index.html">Повесть</a></li>
-              <li><a href="index.html">Комедия</a></li>
-            </ul>
-          </li>
-          <li>
             <a href="index.html" class="desktop-item">Навигация</a>
             <input type="checkbox" id="showMega">
             <label for="showMega" class="mobile-item">Навигация</label>
@@ -197,14 +191,10 @@ input:nth-child(4) {
                   <img src="icons/worm.png" alt="Червяк на листе">
                 </div>
                 <div class="row">
-                  <header>Жанры</header>
-                  <ul class="mega-links">
-                    <li><a href="index.html">Роман</a></li>
-                    <li><a href="index.html">Поэма</a></li>
-                    <li><a href="index.html">Повесть</a></li>
-                    <li><a href="index.html">Комедия</a></li>
-                  </ul>
+                  <header>На главную!</header>
+                  <p>Книги - это наши друзья, поэтому давайте скорее начнем читать!<br><a class="to-main" href="index.html">"Да, скорее хочу!"</a></p>
                 </div>
+
                 <div class="row">
                   <header>Рейтинг</header>
                   <ul class="mega-links">
@@ -241,15 +231,16 @@ input:nth-child(4) {
   </div>
   <!--!sidebar / боковое меню-->
   <div class="sidebar">
-    <p><a href="contacts.html">Контакты</a></p>
-    <p><a href="donat.html">Поддержите нас!</a></p>
-    <p><a href="quotes.html">Цитаты из книг</a></p>
-    <p><a href="feedback.html">Обратная связь</a></p>
-
-    <p>BookWorm рекомендует:</p>
+    <ul>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="donat.html">Поддержите нас!</a></li>
+      <li><a href="quotes.html">Цитаты из книг</a></li>
+      <li><a href="feedback.html">Обратная связь</a></li>
+    </ul>
+    <p class="bwr">BookWorm рекомендует:</p>
     <img src="covers/mertviedushi.jpg"
     width="115px"
-    height="190px">
+    height="190px" class="img-aside">
   </div>
   <!--!content / контент-->
   <div class="content">
@@ -261,7 +252,7 @@ input:nth-child(4) {
   <p>Поскольку сайт работает на добровольной основе Вы можете стать частью тех, благодаря кому он живет. Поддержите любимую библиотеку!</p>
   <div class="cc">
     <h2>MasterCard</h2>
-    <span>___________________________</span>
+    <span class="span-line">___________________________</span>
     <div class="show-card">
       <span class="instructions">НОМЕР КАРТЫ</span>
       <div class="number">
@@ -334,6 +325,7 @@ input:nth-child(4) {
             </select>
           </div>
         </div>
+      </div>
       <!-- Имя -->
       <div class="name">
         <input class="full-name" type="text" maxlength="" inputmode='numeric' placeholder="Иван(а) Иванов(а)">
@@ -341,7 +333,7 @@ input:nth-child(4) {
       </div>
     </div>
     <div class="hide-card">
-      <p>greggege</p>
+      <p>Введите 3 цифры с оборота карты</p>
       <span class="instructions">CVC</span>
       <div class="CVC">
         <input type="text" maxlength="3" placeholder="CVC">
@@ -374,6 +366,7 @@ input:nth-child(4) {
   <!-- partial / scripts / подключения на все скрипты тут -->
   
   <script>
+    /*Кнопка перевернуть*/
     document.addEventListener('DOMContentLoaded', function() {
    document.getElementById('continue').addEventListener('click', function() {
        document.querySelector('.show-card').style.display = 'none';
@@ -385,8 +378,6 @@ input:nth-child(4) {
        document.querySelector('.hide-card').style.display = 'none';
    });
   });
-
-
   </script>
  </body>
 </html>
