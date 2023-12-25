@@ -19,16 +19,19 @@
 .content h2, .p-p {
  text-align: center;
 }
-
 .content-box {
    display: flex;
    justify-content: center;
    align-items: center;
    flex-direction: column
 }
-
+.img-best{
+  display: flex;
+  align-items: center;
+  width: 250px;
+  height: 363px;
+}
 </style>
-
 <body>
   <!--!header / основное меню-->
   <div class="header">
@@ -51,17 +54,6 @@
           </label>
           <li><a href="index.html">Библиотека</a></li>
           <li>
-            <a href="index.html" class="desktop-item">Жанры</a>
-            <input type="checkbox" id="showDrop">
-            <label for="showDrop" class="mobile-item">Жанры</label>
-            <ul class="drop-menu">
-              <li><a href="index.html">Роман</a></li>
-              <li><a href="index.html">Поэма</a></li>
-              <li><a href="index.html">Повесть</a></li>
-              <li><a href="index.html">Комедия</a></li>
-            </ul>
-          </li>
-          <li>
             <a href="index.html" class="desktop-item">Навигация</a>
             <input type="checkbox" id="showMega">
             <label for="showMega" class="mobile-item">Навигация</label>
@@ -71,14 +63,10 @@
                   <img src="icons/worm.png" alt="Червяк на листе">
                 </div>
                 <div class="row">
-                  <header>Жанры</header>
-                  <ul class="mega-links">
-                    <li><a href="index.html">Роман</a></li>
-                    <li><a href="index.html">Поэма</a></li>
-                    <li><a href="index.html">Повесть</a></li>
-                    <li><a href="index.html">Комедия</a></li>
-                  </ul>
+                  <header>На главную!</header>
+                  <p>Книги - это наши друзья, поэтому давайте скорее начнем читать!<br><a class="to-main" href="index.html">"Да, скорее хочу!"</a></p>
                 </div>
+
                 <div class="row">
                   <header>Рейтинг</header>
                   <ul class="mega-links">
@@ -115,24 +103,25 @@
   </div>
   <!--!sidebar / боковое меню-->
   <div class="sidebar">
-    <p><a href="contacts.html">Контакты</a></p>
-    <p><a href="donat.html">Поддержите нас!</a></p>
-    <p><a href="quotes.html">Цитаты из книг</a></p>
-    <p><a href="feedback.html">Обратная связь</a></p>
-
-    <p>BookWorm рекомендует:</p>
+    <ul>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="donat.html">Поддержите нас!</a></li>
+      <li><a href="quotes.html">Цитаты из книг</a></li>
+      <li><a href="feedback.html">Обратная связь</a></li>
+    </ul>
+    <p class="bwr">BookWorm рекомендует:</p>
     <img src="covers/mertviedushi.jpg"
     width="115px"
-    height="190px">
+    height="190px" class="img-aside">
   </div>
   <!--!content / контент-->
   <div class="content">
     <div class="content-box">
-        <h2 id="#day">Лучшее за день!</h2>
+        <h2><a name="day"></a>Лучшее за день!</h2>
         <img src="covers/beci.jpg" class="img-best">
-        <h2 id="#week">Лучшее за неделю!</h2>
+        <h2><a name="week"></a>Лучшее за неделю!</h2>
         <img src="covers/palata6.jpg" class="img-best">
-        <h2 id="#m">Лучшее за месяц!</h2>
+        <h2><a name="m"></a>Лучшее за месяц!</h2>
         <img src="covers/beci.jpg" class="img-best">
         <p class="p-p">Спасибо что Вы с Нами!</p>
     </div>
@@ -154,12 +143,5 @@
     </div>
     <div class="footer-love">Сделано с любовью ❤️</div>
   </div>
-  <!-- partial / scripts / подключения на все скрипты тут -->
-  <script>
-  </script>
  </body>
 </html>
-
-<!--
-  Кнопка наверх, меню не закреплено, будет только сверху
--->
