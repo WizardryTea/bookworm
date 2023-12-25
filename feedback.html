@@ -24,16 +24,13 @@ form {
  padding: 20px;
  font-family: Arial, sans-serif;
 }
-
 form p {
  margin: 0 0 20px;
 }
-
 form label {
  display: block;
  margin-bottom: 5px;
 }
-
 form input[type="text"],
 form input[type="tel"],
 form input[type="email"],
@@ -47,28 +44,23 @@ form input[type="file"] {
  border-radius: 4px;
  box-sizing: border-box;
 }
-
 fieldset label, fieldset input[type="checkbox"] {
  display: inline-block;
 }
-
 form input[type="checkbox"],
 form input[type="radio"] {
  margin: 0 5px 0 0;
  float: left;
 }
-
 form fieldset {
  margin: 0 0 20px;
  padding: 0;
  border: none;
 }
-
 form fieldset legend {
  padding: 0;
  font-weight: bold;
 }
-
 form button[type="submit"] {
  padding: 10px 20px;
  background-color: #351E10;
@@ -78,7 +70,6 @@ form button[type="submit"] {
  border-radius: 4px;
  cursor: pointer;
 }
-
 form button[type="submit"]:hover{
   background-color:#ccab84;
 }
@@ -94,19 +85,36 @@ form button[type="submit"]:hover{
   text-decoration-thickness: 4px;
   text-decoration-color: #351E10;
 }
-.emoji {
- display: flex;
- justify-content: space-between;
- align-items: center;
-}
-.img-emoji {
- width: 50%;
- height: auto;
-}
 .center-text {
  text-align: center;
 }
-
+.emoji {
+ display: flex;
+ justify-content: center;
+}
+.emoji img, .emoji .img-emoji1:hover {
+ width: 290px;
+ background-size: contain;
+}
+.img-emoji1 {
+  object-fit: contain;
+  background-image: url("img/like-off.png");
+}
+.img-emoji1:hover {
+  background-image: url("img/like-on.png");
+}
+.img-emoji2 {
+  background-image: url("img/dislike-off.png");
+}
+.img-emoji2:hover {
+  background-image: url("img/dislike-on.png");
+}
+@media screen and (max-width: 600px) {
+  .emoji img, .emoji .img-emoji1:hover {
+  width: 125px;
+  background-size: contain;
+}
+}
 </style>
 
 <body>
@@ -131,17 +139,6 @@ form button[type="submit"]:hover{
           </label>
           <li><a href="index.html">Библиотека</a></li>
           <li>
-            <a href="index.html" class="desktop-item">Жанры</a>
-            <input type="checkbox" id="showDrop">
-            <label for="showDrop" class="mobile-item">Жанры</label>
-            <ul class="drop-menu">
-              <li><a href="index.html">Роман</a></li>
-              <li><a href="index.html">Поэма</a></li>
-              <li><a href="index.html">Повесть</a></li>
-              <li><a href="index.html">Комедия</a></li>
-            </ul>
-          </li>
-          <li>
             <a href="index.html" class="desktop-item">Навигация</a>
             <input type="checkbox" id="showMega">
             <label for="showMega" class="mobile-item">Навигация</label>
@@ -151,14 +148,10 @@ form button[type="submit"]:hover{
                   <img src="icons/worm.png" alt="Червяк на листе">
                 </div>
                 <div class="row">
-                  <header>Жанры</header>
-                  <ul class="mega-links">
-                    <li><a href="index.html">Роман</a></li>
-                    <li><a href="index.html">Поэма</a></li>
-                    <li><a href="index.html">Повесть</a></li>
-                    <li><a href="index.html">Комедия</a></li>
-                  </ul>
+                  <header>На главную!</header>
+                  <p>Книги - это наши друзья, поэтому давайте скорее начнем читать!<br><a class="to-main" href="index.html">"Да, скорее хочу!"</a></p>
                 </div>
+
                 <div class="row">
                   <header>Рейтинг</header>
                   <ul class="mega-links">
@@ -195,15 +188,16 @@ form button[type="submit"]:hover{
   </div>
   <!--!sidebar / боковое меню-->
   <div class="sidebar">
-    <p><a href="contacts.html">Контакты</a></p>
-    <p><a href="donat.html">Поддержите нас!</a></p>
-    <p><a href="quotes.html">Цитаты из книг</a></p>
-    <p><a href="feedback.html">Обратная связь</a></p>
-
-    <p>BookWorm рекомендует:</p>
+    <ul>
+      <li><a href="contacts.html">Контакты</a></li>
+      <li><a href="donat.html">Поддержите нас!</a></li>
+      <li><a href="quotes.html">Цитаты из книг</a></li>
+      <li><a href="feedback.html">Обратная связь</a></li>
+    </ul>
+    <p class="bwr">BookWorm рекомендует:</p>
     <img src="covers/mertviedushi.jpg"
     width="115px"
-    height="190px">
+    height="190px" class="img-aside">
   </div>
   <!--!content / контент-->
   <div class="content">
@@ -269,7 +263,7 @@ form button[type="submit"]:hover{
             <input type="radio" name="rad" id="rad">
           </div>
           <div cln>
-            <label for="rad">Неопознанный:</label>
+            <label for="rad">Неопознанный</label>
             <input type="radio" name="rad" id="rad">
           </div>
         </fieldset>
@@ -297,10 +291,9 @@ form button[type="submit"]:hover{
       </form>
       <div class="center-text">Благодарим за Ваш отзыв о сайте!</div>
       <div class="emoji">
-        <img src="icons/emoji-like.png" class="img-emoji">
-        <img src="icons/emoji-dislike.png" class="img-emoji">
+        <img src="img/like-off.png" class="img-emoji1">
+        <img src="img/dislike-off.png" class="img-emoji2">
       </div>
-      
   </div>
   </div>
   <!--footer / подвал сайта-->
@@ -320,8 +313,5 @@ form button[type="submit"]:hover{
     </div>
     <div class="footer-love">Сделано с любовью ❤️</div>
   </div>
-  <!-- partial / scripts / подключения на все скрипты тут -->
-  <script>
-</script>
  </body>
 </html>
